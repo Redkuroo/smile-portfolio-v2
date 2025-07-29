@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --background: #18191A;
+  --foreground: #ededed;
+  --accent: #ff5959;
+  --font-sans: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+body.light {
+  background-color: #fdf6ee;
+  color: #18191A;
+}
+
+.light .card, .light .badge {
+  background: #fff8f1;
+  color: #18191A !important;
+  box-shadow: 0 2px 8px 0 rgba(181, 136, 99, 0.08);
+}
+.light .card *, .light .badge * {
+  color: #18191A !important;
+}
+
+body.dark {
+  background-color: #18191A;
+  color: #fff;
+}
