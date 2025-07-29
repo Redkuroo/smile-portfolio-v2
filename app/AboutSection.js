@@ -43,10 +43,12 @@ export default function AboutSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
        <p className="light:text-gray-800">
-  Bachelor of Science in Computer Science graduating student at the University of Mindanao, with a strong interest in UI/UX design and front-end development. Passionate about crafting user-centered interfaces and intuitive digital experiences that blend aesthetics with functionality.
+ Hello! I'm a front-end developer and UI/UX designer based in Davao City, Philippines. I specialize in creating clean, responsive, and engaging user interfaces using tools like React and Tailwind CSS. I'm passionate about crafting designs that are not only visually appealing but also intuitive and user-friendly.
+
+
 </p>
 <p className="light:text-gray-800">
-  I combine technical knowledge with a keen eye for design, using modern tools and principles to solve problems creatively and deliver seamless, responsive user experiences.
+  Beyond coding, I'm a proud Portland Trail Blazers fan and a Mobile Legends gamer, thriving on both competition and creativity. I'm always learning, growing, and pushing boundaries—whether through design, development, or a clutch comeback in ranked matches.
 </p>
 
         </motion.div>
@@ -62,8 +64,9 @@ export default function AboutSection() {
             <span className="text-2xl mt-1" role="img" aria-label="graduation cap">🎓</span>
             <div>
               <div className="font-bold text-lg light:text-[#18191A]">Education</div>
-              <div className="text-gray-200 light:text-[#18191A]">University of Mindanao</div>
-              <div className="text-gray-400 text-sm light:text-gray-900">B.S. in Computer Science</div>
+              <div className="text-gray-200 light:text-[#18191A]">Holy Cross of Davao College</div>
+              <div className="text-gray-400 text-sm light:text-gray-900">Bachelor of Science in Information Technology</div>
+              <div className="text-gray-500 text-sm light:text-gray-900">Cum Laude</div>
             </div>
           </div>
 
