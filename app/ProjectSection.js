@@ -16,38 +16,82 @@ const projectsData = [
     codeUrl: "#",
     demoUrl: "https://dresscan-landingpage.vercel.app/"
   },
-  {
+   {
     id: 2,
-    category: "design",
-    type: "UI/UX Designer",
-    title: "Luxe Donut - Admin dashboard",
-    description: "A modern e-commerce platform with real-time inventory management, secure payments, and responsive design for seamless shopping experience.",
-    techs: ["Figma", "Photoshop", "Canva"],
-    image: "/dummy.png",
-    codeUrl: "https://www.behance.net/gallery/227072853/Luxe-Donut-Admin-dashboard",
-    demoUrl: "#"
+    category: "frontend",
+    type: "Frontend Developer",
+    title: "SMOvers Logistics Services",
+    description: "A logistics service website designed to streamline operations.",
+    techs: ["Next.js", "TailwindCSS", "React", "TypeScript"],
+    image: "/project-laptop.png",
+    codeUrl: "https://github.com/Redkuroo/smovers-website",
+    demoUrl: "https://smovers-website.vercel.app/"
   },
   {
     id: 3,
     category: "design",
-    type: "UI/UX Design",
-    title: "Mobile Banking App",
-    description: "Complete UI/UX design for a modern mobile banking application with focus on user experience and accessibility.",
-    techs: ["figma", "adobe xd", "prototyping", "user research"],
+    type: "UI/UX Designer",
+    title: "Luxe Donut - Admin Dashboard",
+    description: "A modern e-commerce platform with real-time inventory management, secure payments, and responsive design for seamless shopping experience.",
+    techs: ["Figma", "Photoshop", "Canva"],
     image: "/dummy.png",
-    codeUrl: "#",
-    demoUrl: "#"
+    codeUrl: "https://www.behance.net/gallery/227072853/Luxe-Donut-Admin-dashboard",
+    demoUrl: "https://www.figma.com/design/lwoWEVzWzPD6tipb8Tpr58/Luxe-Donut?node-id=0-1&p=f&t=Kjbl9pwTwarALxUh-0"
   },
   {
     id: 4,
     category: "design",
-    type: "Brand Identity",
-    title: "Restaurant Branding",
-    description: "Full brand identity design including logo, color palette, typography, and marketing materials for a premium restaurant chain.",
-    techs: ["illustrator", "photoshop", "indesign", "branding"],
+    type: "UI/UX Designer",
+    title: "Esports Streaming Site",
+    description: "A case study on designing a user-friendly esports streaming site, focusing on intuitive navigation, engaging visuals, and responsive layouts.",
+    techs: ["Figma"],
     image: "/dummy.png",
-    codeUrl: "#",
-    demoUrl: "#"
+    codeUrl: "https://www.behance.net/gallery/227155627/Esports-Streaming-Site",
+    demoUrl: "https://www.figma.com/design/ySSWWEJMAtAzWjtsHcy7A6/Esports-Streaming-Website?t=Kjbl9pwTwarALxUh-0"
+  },
+  {
+    id: 5,
+    category: "design",
+    type: "UI/UX Designer",
+    title: "Authentication Flow Design - Colina Health",
+    description: "A comprehensive design project for Colina Health's authentication flow, focusing on user experience, accessibility, and visual consistency across platforms.",
+    techs: ["Figma"],
+    image: "/dummy.png",
+    codeUrl: "https://www.behance.net/gallery/227205371/Colina-Health-Authentication-Flow-Design",
+    demoUrl: "https://www.figma.com/design/jMjKvklrAU9Tg4h5Qv9vuG/Typography?node-id=15-156&p=f&t=Kjbl9pwTwarALxUh-0"
+  },
+   {
+    id: 6,
+    category: "design",
+    type: "UI/UX Designer",
+    title: "Luxe Donut",
+    description: "A Donut shop website design featuring a modern, responsive layout with a focus on user experience and visual appeal.",
+    techs: ["Figma"],
+    image: "/dummy.png",
+    codeUrl: "https://www.behance.net/gallery/228310555/Luxe-Donut",
+    demoUrl: "https://www.figma.com/design/lwoWEVzWzPD6tipb8Tpr58/Luxe-Donut?node-id=0-1&t=Kjbl9pwTwarALxUh-1"
+  },
+   {
+    id: 7,
+    category: "design",
+    type: "UI/UX Designer",
+    title: "Logistic Services - SMOVERS Landing Page",
+    description: "A landing page design for SMOVERS, a logistics service, showcasing their offerings with a clean, modern aesthetic and user-friendly navigation.",
+    techs: ["Figma"],
+    image: "/dummy.png",
+    codeUrl: "https://www.behance.net/gallery/230536442/Logistic-Services-Landing-Page-(SMOvers)",
+    demoUrl: "https://www.figma.com/design/ySSWWEJMAtAzWjtsHcy7A6/Esports-Streaming-Website?node-id=93-9315&t=Kjbl9pwTwarALxUh-0"
+  },
+  {
+    id: 8,
+    category: "design",
+    type: "UI/UX Designer",
+    title: "GO Plus Online Casino",
+    description: "A sleek online casino platform design featuring a modern interface, intuitive navigation, and engaging user experience.",
+    techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
+    image: "/dummy.png",
+    codeUrl: "https://www.behance.net/gallery/230618553/GO-PLUS-CASINO-UIUX-for-Online-Casino-Platform",
+    demoUrl: "https://www.figma.com/design/ySSWWEJMAtAzWjtsHcy7A6/Esports-Streaming-Website?node-id=93-9315&t=Kjbl9pwTwarALxUh-0"
   }
 ];
 
