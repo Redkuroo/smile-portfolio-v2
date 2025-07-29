@@ -3,34 +3,27 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    date: "2020",
-    title: "Animation & Programming Intern",
-    company: "F-Squared Technologies Inc.",
+    date: "April 2025 - Present",
+    title: "Frontend Developer | UI/UX Designer ",
+    company: "Freelance",
     description:
-      "I’ve been working at this company as an OJT (On-the-Job Training) student as part of my course requirements. During this time, we’ve been given two weeks to learn and explore the animation field and its industry, gaining valuable insights and hands-on experience.",
+      "Led the full development cycle from client communication to deployment while designing user-friendly UIs informed by research and feedback to enhance usability.",
+  
   },
   {
-    date: "2019 - Present",
-    title: "Design Editor",
-    company: "Dr. Santiago Dakudao Sr. National High School",
+    date: "February 2025 - June 2025",
+    title: "UI/UX Designer (Internship)",
+    company: "Jairosoft",
     description:
-      "I have worked as a student assistant under DepEd, focusing on designing educational and administrative materials using Canva. I created layouts for ID cards, classroom visuals, and official documents, ensuring consistent and visually effective outputs. This role strengthened my skills in layout design, visual communication, and attention to detail within an academic setting.",
+      "Designed responsive web and mobile UIs that boosted engagement by 30%, created wireframes and prototypes in Figma, built and maintained a consistent design system, and collaborated closely with developers and PMs to achieve design goals.",
     readMore: true,
   },
   {
-    date: "2024 - Present",
-    title: "Publication Material Editor",
-    company: "Freelance | Solumi, Tibungco, Davao City",
+    date: "July 2022 - July 2025",
+    title: "Student Assistant",
+    company: "Holy Cross of Davao College",
     description:
-      "I currently work as a Publication Material Editor for a coffee shop located in Tibungco, Davao City. In this role, I am responsible for designing and editing various print and digital materials such as menus, promotional posters, and announcements. I collaborate closely with the shop’s management team to create visually appealing and brand-consistent content that effectively communicates promotions, events, and updates to customers.",
-    readMore: true,
-  },
-  {
-    date: "2021 - Present",
-    title: "Freelance Design Entrepreneur",
-    company: "Self-employed",
-    description:
-      "I currently work as a Publication Material Editor for a coffee shI run a small design business creating customized souvenirs and visual materials using Canva. I design invitations, ID cards, social media graphics, and branded items for various clients, strengthening my skills in layout design, branding, and client collaboration.",
+      "Maintained IT lab systems through regular updates and issue resolution, provided technical support to students and faculty, and assisted with hardware, software, and network setup.",
     readMore: true,
   },
 ];
