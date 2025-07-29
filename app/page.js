@@ -35,19 +35,31 @@ export default function Home() {
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col items-start justify-center max-w-2xl">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-left">
-            Hi I&apos;m <span className="text-[var(--accent)]">Teressa!!</span>
+            Hi I&apos;m <span className="text-[var(--accent)]">John Smile!!</span>
           </h1>
           <div className="text-2xl md:text-3xl font-bold mb-2 text-left">
-            <span className="text-[var(--accent)]">UI/UX Designer</span>
+            <span className="text-[var(--accent)]">Frontend Developer | UI/UX Designer</span>
            
           </div>
           <div className="text-lg text-gray-400 mb-6 text-left light:text-gray-700">
-          designing intuitive, responsive user interfaces and seamless experiences using modern design principles and tools.
+          Frontend developer by day, pixel perfectionist by night. Send help.
           </div>
           {/* Tech Stack Badges */}
           <div className="flex flex-wrap gap-4 mt-4">
             {[
-              "Next.js", "ReactJS", "Laravel", "JavaScript", "TypeScript", "Git", "TailwindCSS", "Figma", "Photoshop", "Postman" , "Canva", "Firebase"
+              "HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Shopify Liquid", "YOLOv8", "Python" , "Java",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="badge bg-black/60 text-[var(--accent)] px-5 py-2 rounded-full text-base font-medium shadow-sm border border-[var(--accent)]/30 hover:bg-[#232323] transition light:bg-[#fff8f1] light:text-[var(--accent)] light:border-[var(--accent)]/30 light:hover:bg-[#f5e6d8]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+            <div className="flex flex-wrap gap-4 mt-4">
+            {[
+              "Figma", "Canva", "Adobe XD", "Photoshop" , "Git" , "Github"
             ].map((tech) => (
               <span
                 key={tech}
