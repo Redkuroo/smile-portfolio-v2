@@ -91,7 +91,7 @@ const projectsData = [
     techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
     image: "/dummy.png",
     codeUrl: "https://www.behance.net/gallery/230618553/GO-PLUS-CASINO-UIUX-for-Online-Casino-Platform",
-    demoUrl: "https://www.figma.com/design/ySSWWEJMAtAzWjtsHcy7A6/Esports-Streaming-Website?node-id=93-9315&t=Kjbl9pwTwarALxUh-0"
+    demoUrl: "https://www.figma.com/design/WfHxOnmvmMBLXcho7qjLqn/Casino-Backup?node-id=0-1&t=dGSN6pu7ALcV9SFd-1"
   }
 ];
 
@@ -170,14 +170,19 @@ export default function ProjectSection() {
                 ))}
               </div>
               <div className="flex gap-4 mt-4">
-                <a 
-                  href={project.codeUrl} 
+                <a
+                 
+                  href={project.codeUrl}  
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2 shadow transition"
                 >
                   {project.category === "design" ? "View Design" : "View Code"} <span aria-hidden>→</span>
                 </a>
                 <a 
-                  href={project.demoUrl} 
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="text-[var(--accent)] hover:underline flex items-center gap-2"
                 >
                   {project.category === "design" ? "Live Design" : "Live Demo"}
