@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Teressa Conde | UI/UX Designer",
-  description: "UI/UX Designer specializing in creating user-centered experiences and intuitive interfaces",
+  title: "John Smile Mella | Developer & Designer",
+  description: "I need help",
 };
 
 export default function RootLayout({ children }) {
