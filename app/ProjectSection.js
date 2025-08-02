@@ -92,6 +92,27 @@ const projectsData = [
     image: "/dummy.png",
     codeUrl: "https://www.behance.net/gallery/230618553/GO-PLUS-CASINO-UIUX-for-Online-Casino-Platform",
     demoUrl: "https://www.figma.com/design/WfHxOnmvmMBLXcho7qjLqn/Casino-Backup?node-id=0-1&t=dGSN6pu7ALcV9SFd-1"
+  },
+    {
+    id: 9,
+    category: "design",
+    type: "UI/UX Designer",
+    title: "Bubble ELMS - Material Listing Section",
+    description: "As part of my UI/UX design internship, I designed the Material Listing section for Bubble ELMS, an e-learning management system.",
+    techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
+    image: "/dummy.png",
+    codeUrl: "https://www.behance.net/gallery/231639593/Bubble-ELMS-Material-Listing-Section",
+  },
+  {
+    id: 10,
+    category: "design",
+    type: "UI/UX Designer",
+    title: "JIT EDU Website",
+    description: "Designed the Jairo Institute of Technology website (JIT), it is a sister company of Jairosoft, Inc., a global software solution and consulting services company, trusted since 2007.",
+    techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
+    image: "/dummy.png",
+    codeUrl: "https://www.behance.net/gallery/231694921/JIT-EDU-Website-Internship-Dump-Visuals",
+     demoUrl: "https://jit.edu.ph/"
   }
 ];
 
@@ -177,7 +198,7 @@ export default function ProjectSection() {
                   rel="noopener noreferrer"
                   className="bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2 shadow transition"
                 >
-                  {project.category === "design" ? "View Design" : "View Code"} <span aria-hidden>→</span>
+                  {project.category === "design" ? "View in Behance" : "Source Code"} <span aria-hidden>→</span>
                 </a>
                 <a 
                   href={project.demoUrl}
@@ -185,7 +206,7 @@ export default function ProjectSection() {
                   rel="noopener noreferrer" 
                   className="text-[var(--accent)] hover:underline flex items-center gap-2"
                 >
-                  {project.category === "design" ? "Live Design" : "Live Demo"}
+                  {project.category === "design" ? "Preview" : "Preview Site"}
                 </a>
               </div>
             </div>
