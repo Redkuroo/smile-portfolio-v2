@@ -207,7 +207,7 @@ export default function ProjectSection() {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {(project.techs || []).map((tech) => (
-                      <span key={tech} className="badge bg-black/50 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide border border-[var(--accent)]/30">
+                      <span key={tech} className="badge bg-black/50 text-white px-2 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wide border border-[var(--accent)]/30">
                         {tech}
                       </span>
                     ))}
