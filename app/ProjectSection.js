@@ -12,8 +12,8 @@ const projectsData = [
     title: "Dresscan",
     description: "An AI to detect inappropriate student attire in real-time, empowering HCDC security teams to enforce dress codes and maintain a safe, focused learning environment.",
     techs: ["Python", "YOLOv8"],
-    image: "/project-laptop.png",
-    codeUrl: "#",
+    image: "/projects/dresscan.jpg",
+    codeUrl: "https://github.com/Redkuroo/Dresscan",
     demoUrl: "https://dresscan-landingpage.vercel.app/"
   },
    {
@@ -23,7 +23,7 @@ const projectsData = [
     title: "SMOvers Logistics Services",
     description: "A logistics service website designed to streamline operations.",
     techs: ["Next.js", "TailwindCSS", "React", "TypeScript"],
-    image: "/project-laptop.png",
+    image: "/projects/smovers.png",
     codeUrl: "https://github.com/Redkuroo/smovers-website",
     demoUrl: "https://smovers-website.vercel.app/"
   },
@@ -34,7 +34,7 @@ const projectsData = [
     title: "Luxe Donut - Admin Dashboard",
     description: "A modern e-commerce platform with real-time inventory management, secure payments, and responsive design for seamless shopping experience.",
     techs: ["Figma", "Photoshop", "Canva"],
-    image: "/dummy.png",
+    image: "/projects/luxe admin.jpg",
     codeUrl: "https://www.behance.net/gallery/227072853/Luxe-Donut-Admin-dashboard",
     demoUrl: "https://www.figma.com/design/lwoWEVzWzPD6tipb8Tpr58/Luxe-Donut?node-id=0-1&p=f&t=Kjbl9pwTwarALxUh-0"
   },
@@ -45,7 +45,7 @@ const projectsData = [
     title: "Esports Streaming Site",
     description: "A case study on designing a user-friendly esports streaming site, focusing on intuitive navigation, engaging visuals, and responsive layouts.",
     techs: ["Figma"],
-    image: "/dummy.png",
+    image: "/projects/esports.png",
     codeUrl: "https://www.behance.net/gallery/227155627/Esports-Streaming-Site",
     demoUrl: "https://www.figma.com/design/ySSWWEJMAtAzWjtsHcy7A6/Esports-Streaming-Website?t=Kjbl9pwTwarALxUh-0"
   },
@@ -56,7 +56,7 @@ const projectsData = [
     title: "Authentication Flow Design - Colina Health",
     description: "A comprehensive design project for Colina Health's authentication flow, focusing on user experience, accessibility, and visual consistency across platforms.",
     techs: ["Figma"],
-    image: "/dummy.png",
+    image: "/projects/colina.jpg",
     codeUrl: "https://www.behance.net/gallery/227205371/Colina-Health-Authentication-Flow-Design",
     demoUrl: "https://www.figma.com/design/jMjKvklrAU9Tg4h5Qv9vuG/Typography?node-id=15-156&p=f&t=Kjbl9pwTwarALxUh-0"
   },
@@ -67,7 +67,7 @@ const projectsData = [
     title: "Luxe Donut",
     description: "A Donut shop website design featuring a modern, responsive layout with a focus on user experience and visual appeal.",
     techs: ["Figma"],
-    image: "/dummy.png",
+    image: "/projects/luxe.png",
     codeUrl: "https://www.behance.net/gallery/228310555/Luxe-Donut",
     demoUrl: "https://www.figma.com/design/lwoWEVzWzPD6tipb8Tpr58/Luxe-Donut?node-id=0-1&t=Kjbl9pwTwarALxUh-1"
   },
@@ -78,7 +78,7 @@ const projectsData = [
     title: "Logistic Services - SMOVERS Landing Page",
     description: "A landing page design for SMOVERS, a logistics service, showcasing their offerings with a clean, modern aesthetic and user-friendly navigation.",
     techs: ["Figma"],
-    image: "/dummy.png",
+    image: "/projects/smovers ui.png",
     codeUrl: "https://www.behance.net/gallery/230536442/Logistic-Services-Landing-Page-(SMOvers)",
     demoUrl: "https://www.figma.com/design/ySSWWEJMAtAzWjtsHcy7A6/Esports-Streaming-Website?node-id=93-9315&t=Kjbl9pwTwarALxUh-0"
   },
@@ -89,7 +89,7 @@ const projectsData = [
     title: "GO Plus Online Casino",
     description: "A sleek online casino platform design featuring a modern interface, intuitive navigation, and engaging user experience.",
     techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
-    image: "/dummy.png",
+    image: "/projects/goplus.png",
     codeUrl: "https://www.behance.net/gallery/230618553/GO-PLUS-CASINO-UIUX-for-Online-Casino-Platform",
     demoUrl: "https://www.figma.com/design/WfHxOnmvmMBLXcho7qjLqn/Casino-Backup?node-id=0-1&t=dGSN6pu7ALcV9SFd-1"
   },
@@ -100,7 +100,7 @@ const projectsData = [
     title: "Bubble ELMS - Material Listing Section",
     description: "As part of my UI/UX design internship, I designed the Material Listing section for Bubble ELMS, an e-learning management system.",
     techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
-    image: "/dummy.png",
+    image: "/projects/elms.png",
     codeUrl: "https://www.behance.net/gallery/231639593/Bubble-ELMS-Material-Listing-Section",
   },
   {
@@ -110,7 +110,7 @@ const projectsData = [
     title: "JIT EDU Website",
     description: "Designed the Jairo Institute of Technology website (JIT), it is a sister company of Jairosoft, Inc., a global software solution and consulting services company, trusted since 2007.",
     techs: ["Figma", "Photoshop", "Canva", "Adobe XD"],
-    image: "/dummy.png",
+    image: "/projects/jit.png",
     codeUrl: "https://www.behance.net/gallery/231694921/JIT-EDU-Website-Internship-Dump-Visuals",
      demoUrl: "https://jit.edu.ph/"
   }
@@ -165,13 +165,13 @@ export default function ProjectSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: index * 0.06 }}
-            className="group"
+            className="group cursor-pointer"
           >
             {/* Type & Title moved into overlay (show on hover/click) */}
 
             {/* Image container with hover overlay (flush tiles, no border/shadow) */}
             <div
-              className="relative overflow-hidden bg-gray-900 light:bg-[#f5e6d8]"
+              className="relative overflow-hidden bg-gray-900 light:bg-[#f5e6d8] cursor-pointer"
               role="button"
               tabIndex={0}
               onClick={() => setOpenId(openId === project.id ? null : project.id)}
@@ -207,7 +207,7 @@ export default function ProjectSection() {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {(project.techs || []).map((tech) => (
-                      <span key={tech} className="badge bg-black/50 text-white px-2 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wide border border-[var(--accent)]/30">
+                      <span key={tech} className="badge bg-black/50 text-white px-2 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wide border border-[var(--accent)]/30 cursor-pointer">
                         {tech}
                       </span>
                     ))}
@@ -219,7 +219,7 @@ export default function ProjectSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className={`bg-[var(--accent)] hover:bg-[#6d3bbd] text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                      className={`bg-[var(--accent)] hover:bg-[#6d3bbd] text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} cursor-pointer`}
                       aria-label={`${project.title} Source Code`}
                     >
                       {project.category === 'design' ? 'View' : 'Code'}
@@ -229,7 +229,7 @@ export default function ProjectSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className={`bg-white/10 hover:bg-white/20 text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                      className={`bg-white/10 hover:bg-white/20 text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} cursor-pointer`}
                       aria-label={`${project.title} Demo`}
                     >
                       {project.category === 'design' ? 'Preview' : 'Demo'}
