@@ -167,11 +167,7 @@ export default function ProjectSection() {
             transition={{ duration: 0.45, delay: index * 0.06 }}
             className="group"
           >
-            {/* Type & Title above the image */}
-            <div className="mb-3">
-              <div className="text-xs text-[var(--accent)] font-semibold uppercase tracking-wide">{project.type}</div>
-              <h3 className="text-2xl font-extrabold text-white mt-1 light:text-[#18191A]">{project.title}</h3>
-            </div>
+            {/* Type & Title moved into overlay (show on hover/click) */}
 
             {/* Image container with hover overlay (flush tiles, no border/shadow) */}
             <div
@@ -202,6 +198,11 @@ export default function ProjectSection() {
                 className={`absolute inset-0 bg-black/60 transition-opacity duration-300 flex items-end ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
               >
                 <div className="w-full p-5 text-white">
+                  {/* Title & Type now shown inside the overlay */}
+                  <div className="mb-3">
+                    <div className="text-xs text-[var(--accent)] font-semibold uppercase tracking-wide">{project.type}</div>
+                    <h3 className="text-xl font-extrabold text-white mt-1 light:text-[#18191A]">{project.title}</h3>
+                  </div>
                   <p className="mb-3 text-sm text-white/90 line-clamp-3">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
