@@ -156,8 +156,8 @@ export default function ProjectSection() {
         </div>
       </div>
 
-      {/* Grid of project cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+  {/* Grid of project cards (no gaps) */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -172,8 +172,8 @@ export default function ProjectSection() {
               <h3 className="text-2xl font-extrabold text-white mt-1 light:text-[#18191A]">{project.title}</h3>
             </div>
 
-            {/* Image container with hover overlay */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-800 bg-gray-900 light:border-[#e2cdb0] light:bg-[#f5e6d8]">
+            {/* Image container with hover overlay (flush tiles, no border/shadow) */}
+            <div className="relative overflow-hidden bg-gray-900 light:bg-[#f5e6d8]">
               <div className="w-full h-56 relative">
                 <Image
                   src={project.image}
