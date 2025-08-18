@@ -129,26 +129,25 @@ export default function ProjectSection() {
   const filteredProjects = activeFilter === "all" 
     ? projectsData 
     : projectsData.filter(project => project.category === activeFilter);
-
   return (
-    <section id="projects" className="relative w-full min-h-screen px-8 md:px-32 py-20 overflow-hidden bg-[#18191A] light:bg-[#fff8f1] light:text-[#18191A]">
+    <section id="projects" className="relative w-full min-h-screen px-6 md:px-28 py-16 overflow-hidden bg-[#18191A] light:bg-[#fff8f1] light:text-[#18191A]">
       {/* Header */}
-      <div className="mb-16">
+      <div className="mb-10">
         <h2 className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] light:text-[#18191A]">
           Projects
         </h2>
-        <div className="w-20 h-1.5 bg-[var(--accent)] mb-10 rounded-full" />
-        
+        <div className="w-20 h-1.5 bg-[var(--accent)] mb-8 rounded-full" />
+
         {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-3 mb-12">
+        <div className="flex flex-wrap gap-3 mb-6">
           {filterOptions.map((option) => (
             <button
               key={option.id}
               onClick={() => setActiveFilter(option.id)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 cursor-pointer ${
+              className={`px-5 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer ${
                 activeFilter === option.id
                   ? "bg-[var(--accent)] text-white shadow-lg"
-                  : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 light:bg-[#f5e6d8] light:text-gray-700 light:hover:bg-[#e2cdb0]"
+                  : "bg-gray-800/40 text-gray-300 hover:bg-gray-700/40 light:bg-[#f5e6d8] light:text-gray-700 light:hover:bg-[#e2cdb0]"
               }`}
             >
               {option.label}
@@ -157,70 +156,69 @@ export default function ProjectSection() {
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="space-y-20">
+      {/* Grid of project cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`flex flex-col items-center justify-between gap-12 ${
-              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-            }`}
+            transition={{ duration: 0.45, delay: index * 0.06 }}
+            className="group"
           >
-            {/* Project Info */}
-            <div className="relative z-10 flex-1 max-w-xl text-white card p-6 rounded-xl shadow light:text-[#18191A]">
-              <div className="mb-2 text-xs text-[var(--accent)] font-semibold uppercase tracking-wide">
-                {project.type}
-              </div>
-              <h3 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight light:text-[#18191A]">
-                {project.title}
-              </h3>
-              <p className="mb-6 text-lg text-white/90 light:text-gray-900">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.techs.map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="badge bg-black/60 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide border border-[var(--accent)]/30 light:bg-[#fff8f1] light:text-[var(--accent)] light:border-[var(--accent)]/30 light:hover:bg-[#f5e6d8]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4 mt-4">
-                <a
-                 
-                  href={project.codeUrl}  
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2 shadow transition"
-                >
-                  {project.category === "design" ? "View in Behance" : "Source Code"} <span aria-hidden>→</span>
-                </a>
-                <a 
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="text-[var(--accent)] hover:underline flex items-center gap-2"
-                >
-                  {project.category === "design" ? "Preview" : "Preview Site"}
-                </a>
-              </div>
+            {/* Type & Title above the image */}
+            <div className="mb-3">
+              <div className="text-xs text-[var(--accent)] font-semibold uppercase tracking-wide">{project.type}</div>
+              <h3 className="text-2xl font-extrabold text-white mt-1 light:text-[#18191A]">{project.title}</h3>
             </div>
 
-            {/* Project Image */}
-            <div className="relative flex-1 flex items-center justify-center z-10">
-              <div className="w-[440px] h-[260px] rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-900 flex items-center justify-center light:border-[#e2cdb0] light:bg-[#f5e6d8]">
+            {/* Image container with hover overlay */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-800 bg-gray-900 light:border-[#e2cdb0] light:bg-[#f5e6d8]">
+              <div className="w-full h-56 relative">
                 <Image
                   src={project.image}
                   alt={`${project.title} Screenshot`}
                   fill
-                  className="object-cover rounded-2xl"
-                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 440px"
+                  priority={index < 3}
                 />
+              </div>
+
+              {/* Overlay shown on hover */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div className="w-full p-5 text-white">
+                  <p className="mb-3 text-sm text-white/90 line-clamp-3">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {(project.techs || []).map((tech) => (
+                      <span key={tech} className="badge bg-black/50 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide border border-[var(--accent)]/30">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <a
+                      href={project.codeUrl || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-4 py-2 rounded-md font-semibold transition shadow opacity-0 group-hover:opacity-100"
+                      aria-label={`${project.title} Source Code`}
+                    >
+                      {project.category === 'design' ? 'View' : 'Code'}
+                    </a>
+                    <a
+                      href={project.demoUrl || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md font-semibold transition opacity-0 group-hover:opacity-100"
+                      aria-label={`${project.title} Demo`}
+                    >
+                      {project.category === 'design' ? 'Preview' : 'Demo'}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
