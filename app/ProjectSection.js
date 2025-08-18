@@ -219,7 +219,7 @@ export default function ProjectSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className={`bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-4 py-2 rounded-md font-semibold transition shadow ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                      className={`bg-[var(--accent)] hover:bg-[#6d3bbd] text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                       aria-label={`${project.title} Source Code`}
                     >
                       {project.category === 'design' ? 'View' : 'Code'}
@@ -229,7 +229,7 @@ export default function ProjectSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className={`bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md font-semibold transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                      className={`bg-white/10 hover:bg-white/20 text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                       aria-label={`${project.title} Demo`}
                     >
                       {project.category === 'design' ? 'Preview' : 'Demo'}
