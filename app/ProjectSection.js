@@ -113,7 +113,29 @@ const projectsData = [
     image: "/projects/jit.png",
     codeUrl: "https://www.behance.net/gallery/231694921/JIT-EDU-Website-Internship-Dump-Visuals",
      demoUrl: "https://jit.edu.ph/"
-  }
+  },
+  {
+    id: 11,
+    category: "frontend",
+    type: "Fullstack Developer",
+    title: "Nextjs AI Chatbot",
+    description: "An AI-powered chatbot built with Next.js, offering real-time, interactive conversations with a sleek, responsive UI.",
+    techs: ["Next.js", "AI SDK", "shadcn/ui"],
+    image: "/projects/chatsdk.png",
+    codeUrl: "https://github.com/Redkuroo/nextjs-ai-chatbot?tab=readme-ov-file",
+    demoUrl: "https://nextjs-ai-chatbot-three-lovat-83.vercel.app/"
+  },
+  {
+    id: 12,
+    category: ["design", "frontend"],
+    type: "Frontend Developer & UI/UX Designer",
+    title: "The Wander Club",
+    description: "I developed the hero section and designed it with CRO (Conversion Rate Optimization) principles for The Wander Club website during my freelancing days, focusing on a sleek, responsive, and user-friendly UI.",
+    techs: ["Next.js", "Figma", "Canva"],
+    image: "/projects/wanderclub.png",
+    codeUrl: "https://www.figma.com/design/62Id4GggHC0VRs0cczHfP0/TheWanderClub_Hero_A-BTest_UIUX_JohnSmileMella?node-id=0-1&p=f&t=22nh2iwYQKELw4CI-0",
+    demoUrl: "https://thewanderclub.com/?srsltid=AfmBOopwb_s69cp4tm5YYQXZfL9UL1mBsE7JlZOayUgtu9q9uvf2_9Qq"
+  },
 ];
 
 const filterOptions = [
@@ -127,9 +149,13 @@ export default function ProjectSection() {
   const [openId, setOpenId] = useState(null);
   
   // Filter projects based on active filter
-  const filteredProjects = activeFilter === "all" 
-    ? projectsData 
-    : projectsData.filter(project => project.category === activeFilter);
+  // support categories stored as string or array
+  const filteredProjects = activeFilter === "all"
+    ? projectsData
+    : projectsData.filter(project => {
+        const cats = Array.isArray(project.category) ? project.category : [project.category];
+        return cats.map(c => c.toLowerCase().trim()).includes(activeFilter.toLowerCase());
+      });
   return (
     <section id="projects" className="relative w-full min-h-screen px-6 md:px-28 py-16 overflow-hidden bg-[#18191A] light:bg-[#fff8f1] light:text-[#18191A]">
       {/* Header */}
@@ -182,12 +208,13 @@ export default function ProjectSection() {
                 }
               }}
             >
-              <div className="w-full h-56 relative">
+              {/* 16:9 aspect box; requires Tailwind aspect-ratio plugin or modern Tailwind */}
+              <div className="w-full relative aspect-[16/9] sm:aspect-[4/3]">
                 <Image
                   src={project.image}
                   alt={`${project.title} Screenshot`}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 440px"
                   priority={index < 3}
                 />
