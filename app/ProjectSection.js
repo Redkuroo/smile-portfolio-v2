@@ -124,6 +124,7 @@ const filterOptions = [
 
 export default function ProjectSection() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [openId, setOpenId] = useState(null);
   
   // Filter projects based on active filter
   const filteredProjects = activeFilter === "all" 
@@ -158,7 +159,7 @@ export default function ProjectSection() {
 
   {/* Grid of project cards (no gaps) */}
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
-        {filteredProjects.map((project, index) => (
+  {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
@@ -173,7 +174,18 @@ export default function ProjectSection() {
             </div>
 
             {/* Image container with hover overlay (flush tiles, no border/shadow) */}
-            <div className="relative overflow-hidden bg-gray-900 light:bg-[#f5e6d8]">
+            <div
+              className="relative overflow-hidden bg-gray-900 light:bg-[#f5e6d8]"
+              role="button"
+              tabIndex={0}
+              onClick={() => setOpenId(openId === project.id ? null : project.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setOpenId(openId === project.id ? null : project.id);
+                }
+              }}
+            >
               <div className="w-full h-56 relative">
                 <Image
                   src={project.image}
@@ -185,8 +197,10 @@ export default function ProjectSection() {
                 />
               </div>
 
-              {/* Overlay shown on hover */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              {/* Overlay shown on hover OR when tile is open (mobile) */}
+              <div
+                className={`absolute inset-0 bg-black/60 transition-opacity duration-300 flex items-end ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+              >
                 <div className="w-full p-5 text-white">
                   <p className="mb-3 text-sm text-white/90 line-clamp-3">{project.description}</p>
 
@@ -203,7 +217,8 @@ export default function ProjectSection() {
                       href={project.codeUrl || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-4 py-2 rounded-md font-semibold transition shadow opacity-0 group-hover:opacity-100"
+                      onClick={(e) => e.stopPropagation()}
+                      className={`bg-[var(--accent)] hover:bg-[#6d3bbd] text-white px-4 py-2 rounded-md font-semibold transition shadow ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                       aria-label={`${project.title} Source Code`}
                     >
                       {project.category === 'design' ? 'View' : 'Code'}
@@ -212,7 +227,8 @@ export default function ProjectSection() {
                       href={project.demoUrl || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md font-semibold transition opacity-0 group-hover:opacity-100"
+                      onClick={(e) => e.stopPropagation()}
+                      className={`bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md font-semibold transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                       aria-label={`${project.title} Demo`}
                     >
                       {project.category === 'design' ? 'Preview' : 'Demo'}
