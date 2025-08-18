@@ -157,8 +157,8 @@ export default function ProjectSection() {
         </div>
       </div>
 
-  {/* Grid of project cards (no gaps) */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+  {/* Grid of project cards (small gap between tiles) */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
   {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
