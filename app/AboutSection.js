@@ -123,15 +123,9 @@ export default function AboutSection() {
                   key={`c1-${i}`}
                   className="carousel-item inline-block p-2"
                 >
-                  <button
-                    type="button"
-                    onClick={() => { if (isTouch) setZoomSrc(src); }}
-                    onKeyDown={(e) => { if (e.key === 'Enter') setZoomSrc(src); }}
-                    className="focus:outline-none"
-                    aria-label={`Open image ${i}`}
-                  >
+                  <div className="focus:outline-none" aria-hidden>
                     <img src={src} alt={`carousel ${i}`} className="h-40 md:h-56 object-cover rounded-lg shadow-md" />
-                  </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -148,15 +142,9 @@ export default function AboutSection() {
                   key={`c2-${i}`}
                   className="carousel-item inline-block p-2"
                 >
-                  <button
-                    type="button"
-                    onClick={() => { if (isTouch) setZoomSrc(src); }}
-                    onKeyDown={(e) => { if (e.key === 'Enter') setZoomSrc(src); }}
-                    className="focus:outline-none"
-                    aria-label={`Open image rev ${i}`}
-                  >
+                  <div className="focus:outline-none" aria-hidden>
                     <img src={src} alt={`carousel rev ${i}`} className="h-40 md:h-56 object-cover rounded-lg shadow-md" />
-                  </button>
+                  </div>
                 </div>
               ))}
             </div>
