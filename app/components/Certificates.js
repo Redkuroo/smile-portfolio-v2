@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function Certificates() {
   const [selectedId, setSelectedId] = useState(1);
+  const [activeFilter, setActiveFilter] = useState("all");
   const [page, setPage] = useState(1);
   const pageSize = 6;
 
@@ -13,6 +14,7 @@ export default function Certificates() {
       id: 1,
       title: "Google I/O Extended 2024 Volunteer",
       issuer: "Google / Volunteer",
+      category: "it",
       date: "2024",
       tags: ["Google", "Volunteering"],
       image: "/projects/goplus.png",
@@ -22,6 +24,7 @@ export default function Certificates() {
       id: 2,
       title: "Fullstack Web Development",
       issuer: "Coursera / University",
+      category: "programming",
       date: "Mar 2024",
       tags: ["Web", "Fullstack"],
       image: "/a.jpg",
@@ -31,6 +34,7 @@ export default function Certificates() {
       id: 3,
       title: "Advanced React",
       issuer: "Frontend Masters",
+      category: "programming",
       date: "Jun 2024",
       tags: ["React", "Frontend"],
       image: "/b.jpg",
@@ -40,6 +44,7 @@ export default function Certificates() {
       id: 4,
       title: "UI/UX Design Principles",
       issuer: "Design Institute",
+      category: "uiux",
       date: "Dec 2023",
       tags: ["Design", "UX"],
       image: "/c.jpg",
@@ -49,6 +54,7 @@ export default function Certificates() {
       id: 5,
       title: "Certificate 5",
       issuer: "Issuer 5",
+      category: "competitions",
       date: "2022",
       tags: ["TagA"],
       image: "/a.jpg",
@@ -58,6 +64,7 @@ export default function Certificates() {
       id: 6,
       title: "Certificate 6",
       issuer: "Issuer 6",
+      category: "it",
       date: "2021",
       tags: ["TagB"],
       image: "/b.jpg",
@@ -67,6 +74,7 @@ export default function Certificates() {
       id: 7,
       title: "Certificate 7",
       issuer: "Issuer 7",
+      category: "competitions",
       date: "2020",
       tags: ["TagC"],
       image: "/c.jpg",
@@ -74,24 +82,61 @@ export default function Certificates() {
     }
   ];
 
-  const totalPages = Math.max(1, Math.ceil(certificateData.length / pageSize));
-  const pagedCerts = useMemo(() => certificateData.slice((page - 1) * pageSize, page * pageSize), [page]);
-  const selectedCert = certificateData.find((c) => c.id === selectedId) || certificateData[0];
+  const filterOptions = [
+    { id: "all", label: "All" },
+    { id: "competitions", label: "Competitions" },
+    { id: "programming", label: "Programming Related Workshops" },
+    { id: "it", label: "IT Related Gatherings" },
+    { id: "uiux", label: "UI/UX" }
+  ];
+
+  const filteredCerts = useMemo(() => {
+    if (activeFilter === "all") return certificateData;
+    return certificateData.filter((c) => {
+      const cats = Array.isArray(c.category) ? c.category : [c.category];
+      return cats.map(x => x.toLowerCase()).includes(activeFilter.toLowerCase());
+    });
+  }, [activeFilter]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredCerts.length / pageSize));
+  const pagedCerts = useMemo(() => filteredCerts.slice((page - 1) * pageSize, page * pageSize), [page, filteredCerts]);
+  const selectedCert = filteredCerts.find((c) => c.id === selectedId) || filteredCerts[0] || certificateData[0];
 
   // ensure selectedId exists on page change
   useEffect(() => {
     if (!pagedCerts.some((c) => c.id === selectedId)) {
-      setSelectedId(pagedCerts[0]?.id || certificateData[0].id);
+      setSelectedId(pagedCerts[0]?.id || filteredCerts[0]?.id || certificateData[0].id);
     }
-  }, [page]);
+  }, [page, filteredCerts]);
+
+  // reset page when filter changes
+  useEffect(() => setPage(1), [activeFilter]);
 
   return (
     <section id="certificates" className="relative w-full px-6 md:px-28 py-16 overflow-hidden bg-transparent light:bg-transparent">
+       {/* Header */}
       <div className="mb-10">
         <h2 className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] light:text-[#18191A]">
-          CERTIFICATIONS
+          Certificates
         </h2>
         <div className="w-20 h-1.5 bg-[var(--accent)] mb-8 rounded-full" />
+
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap gap-3 mb-6">
+          {filterOptions.map((option) => (
+            <button
+              key={option.id}
+              onClick={() => setActiveFilter(option.id)}
+              className={`px-5 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer ${
+                activeFilter === option.id
+                  ? "bg-[var(--accent)] text-white shadow-lg"
+                  : "bg-gray-800/40 text-gray-300 hover:bg-gray-700/40 light:bg-[#f5e6d8] light:text-gray-700 light:hover:bg-[#e2cdb0]"
+              }`}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="lg:flex lg:items-start lg:gap-10">
