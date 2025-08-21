@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import AboutSection from "./AboutSection";
 import ExperienceSection from "./ExperienceSection";
 import ProjectSection from "./ProjectSection";
+import Certificates from "./components/Certificates";
 import Sun3D from './components/Sun3D';
 import { useTheme } from "./ThemeProvider";
 
@@ -81,6 +82,8 @@ export default function Home() {
       <ExperienceSection />
       {/* Project Section */}
       <ProjectSection />
+  {/* Certificates Section */}
+  <Certificates />
 
 
       {/* Optional: Subtle dots background */}
