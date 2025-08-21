@@ -167,9 +167,9 @@ export default function AboutSection() {
 
   {/* Styles for the carousels (scoped via global injection) */}
       <style>{`
-  .carousel { position: relative; }
-  .carousel-track { display: flex; align-items: center; width: 200%; gap: 0.5rem; animation: scroll-left 28s linear infinite; }
-  .carousel-track.reverse { animation: scroll-right 28s linear infinite; }
+  .carousel { position: relative; --scroll-duration: 28s; }
+  .carousel-track { display: flex; align-items: center; width: 200%; gap: 0.5rem; animation: scroll-left var(--scroll-duration) linear infinite; }
+  .carousel-track.reverse { animation: scroll-right var(--scroll-duration) linear infinite; }
       .carousel-item { flex: 0 0 auto; }
 
       /* Hover zoom for non-touch devices */
@@ -189,8 +189,7 @@ export default function AboutSection() {
 
       /* Faster on small screens (mobile) */
       @media (max-width: 767px) {
-        .carousel-track { animation-duration: 14s; }
-        .carousel-track.reverse { animation-duration: 14s; }
+        .carousel { --scroll-duration: 14s; }
       }
 
       /* Make the gradients glow a bit stronger on larger screens */
