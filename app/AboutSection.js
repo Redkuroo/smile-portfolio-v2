@@ -130,7 +130,7 @@ export default function AboutSection() {
                     className="focus:outline-none"
                     aria-label={`Open image ${i}`}
                   >
-                    <img src={src} alt={`carousel ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                    <img src={src} alt={`carousel ${i}`} className="h-40 md:h-56 object-cover rounded-lg shadow-md" />
                   </button>
                 </div>
               ))}
@@ -155,7 +155,7 @@ export default function AboutSection() {
                     className="focus:outline-none"
                     aria-label={`Open image rev ${i}`}
                   >
-                    <img src={src} alt={`carousel rev ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                    <img src={src} alt={`carousel rev ${i}`} className="h-40 md:h-56 object-cover rounded-lg shadow-md" />
                   </button>
                 </div>
               ))}
@@ -201,7 +201,7 @@ export default function AboutSection() {
 
       /* Make the gradients glow a bit stronger on larger screens */
       @media (min-width: 768px) {
-        .carousel-item img { height: 9rem; }
+        .carousel-item img { height: 14rem; }
       }
     `}</style>
     </>
