@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Certificates from "./Certificates";
 
 // Project data with categories
 const projectsData = [
@@ -293,7 +292,7 @@ export default function ProjectSection() {
       )}
       </section>
 
-  <Certificates />
+  
     </>
   );
 }
