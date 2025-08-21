@@ -195,11 +195,31 @@ export default function Certificates() {
   return (
     <section id="certificates" className="relative w-full px-6 md:px-28 py-16 overflow-hidden bg-transparent light:bg-transparent">
        {/* Header */}
-      <div className="mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] light:text-[#18191A]">
-          Certificates
-        </h2>
-        <div className="w-20 h-1.5 bg-[var(--accent)] mb-8 rounded-full" />
+   
+         <div className="mb-10">
+        {/* Section Heading */}
+      <motion.h2
+        className="text-3xl md:text-4xl font-bold mb-2"
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        About Me
+      </motion.h2>
+
+      {/* Underline */}
+      <motion.div
+        className="w-20 h-1.5 bg-[var(--accent)] mb-10 rounded-full"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        style={{ transformOrigin: "left" }}
+      />
+
+      </div>
+
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-3 mb-6">
@@ -217,7 +237,7 @@ export default function Certificates() {
             </button>
           ))}
         </div>
-      </div>
+   
 
       <div className="lg:flex lg:items-start lg:gap-10">
         {/* Left: big typographic title and meta */}

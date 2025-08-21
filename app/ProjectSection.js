@@ -171,12 +171,33 @@ export default function ProjectSection() {
   return (
     <>
       <section id="projects" className="relative w-full min-h-screen px-6 md:px-28 py-16 overflow-hidden bg-[#18191A] light:bg-[#fff8f1] light:text-[#18191A]">
-      {/* Header */}
-      <div className="mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] light:text-[#18191A]">
-          Projects
-        </h2>
-        <div className="w-20 h-1.5 bg-[var(--accent)] mb-8 rounded-full" />
+      
+
+       {/* Section Heading */}
+
+             <div className="mb-10">
+
+            <motion.h2
+              className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Projects
+            </motion.h2>
+      
+            {/* Underline */}
+            <motion.div
+              className="w-20 h-1.5 bg-[var(--accent)] mb-10 rounded-full"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{ transformOrigin: "left" }}
+            />
+
+
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-3 mb-6">

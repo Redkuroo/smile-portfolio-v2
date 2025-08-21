@@ -40,8 +40,29 @@ const experiences = [
 export default function ExperienceSection() {
   return (
     <section id="experience" className="w-full min-h-[60vh] bg-[#18191A] px-8 md:px-32 py-20 light:bg-[#fff8f1] light:text-[#18191A]">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Experience</h2>
-      <div className="w-20 h-1.5 bg-[var(--accent)] mb-10 rounded-full" />
+
+      {/* Section Heading */}
+       <div className="mb-10">
+            <motion.h2
+              className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Experience
+            </motion.h2>
+      
+            {/* Underline */}
+            <motion.div
+              className="w-20 h-1.5 bg-[var(--accent)] mb-10 rounded-full"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{ transformOrigin: "left" }}
+            />
+     </div>
       <div className="relative flex flex-col items-start">
         {/* Vertical timeline line */}
         <div className="absolute -left-6 top-0 h-full w-1 bg-gradient-to-b from-transparent via-[var(--accent)]/60 to-transparent rounded-full z-0" />
