@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./Sidebar";
+import ScrollTopButton from "./components/ScrollTopButton";
 import { ThemeProvider } from "./ThemeProvider";
 
 const geistSans = Geist({
@@ -25,6 +26,9 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <Sidebar />
           {children}
+
+          {/* Sticky bottom-right button (client component) */}
+          <ScrollTopButton />
         </ThemeProvider>
       </body>
     </html>

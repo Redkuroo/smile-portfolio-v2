@@ -5,10 +5,10 @@ import { useTheme } from "./ThemeProvider";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub, FaBehance, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
-  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#certificates", label: "Certificates" },
 ];
 
 const socials = [
@@ -61,7 +61,7 @@ export default function Sidebar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group relative text-gray-300 font-semibold text-sm px-2 py-2 w-full flex justify-center items-center rounded transition-colors duration-200"
+                className="group relative text-gray-300 font-semibold text-sm px-4 py-4 w-full flex justify-center items-center rounded transition-colors duration-200"
               >
                 <span className="block -rotate-90 whitespace-nowrap tracking-wide transition-colors duration-200 group-hover:text-[var(--accent)]">
                   {link.label}
