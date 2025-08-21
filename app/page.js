@@ -68,13 +68,39 @@ export default function Home() {
                 {tech}
               </span>
             ))}
+
+              <div className="mt-8">
+              <a
+                  href={"/John_Smile_Resume.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
+                >
+                 View Resume
+                </a>
+            </div>
+
+              <div className="mt-8">
+              <a
+                  href={"/John_Smile_Resume.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
+                >
+                 Contact Me
+                </a>
+            </div>
           </div>
         </div>
         {/* Right: Profile Image */}
         <div className="flex-1 flex items-center justify-center">
           <Sun3D onClick={toggleTheme} mode={theme} />
         </div>
+
+            
       </section>
+
+  
 
       {/* About Section */}
       <AboutSection />

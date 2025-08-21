@@ -61,7 +61,7 @@ export default function Certificates() {
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[var(--accent)] hover:bg-[#6d3bbd] text-white text-sm px-3 py-1 rounded-sm font-medium"
+                    className="bg-[var(--accent)] hover:bg-red-500 text-white text-sm px-3 py-1 rounded-sm font-medium"
                     aria-label={`View ${cert.title}`}
                   >
                     View

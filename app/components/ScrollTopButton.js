@@ -23,7 +23,7 @@ export default function ScrollTopButton() {
       onDoubleClick={() => {
         if (typeof window !== "undefined") window.location.href = "/";
       }}
-  className="fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full bg-[var(--accent)] text-white flex items-center justify-center shadow-xl hover:scale-105 transition-all duration-300 opacity-100 cursor-pointer animate-[fade-in_300ms_ease]"
+  className="fixed right-6 bottom-6 z-50 w-14 h-14  text-white flex items-center justify-center shadow-xl hover:scale-105 transition-all duration-300 opacity-100 cursor-pointer animate-[fade-in_300ms_ease]"
       aria-label="Scroll to top or restart"
     >
   <HiChevronUp className="h-6 w-6" aria-hidden />
