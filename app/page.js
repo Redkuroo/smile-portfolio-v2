@@ -46,7 +46,7 @@ export default function Home() {
           {/* Tech Stack Badges */}
           <div className="flex flex-wrap gap-4 mt-4">
             {[
-              "HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Shopify Liquid", "YOLOv8", "Python" , "Java",
+              "HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Shopify Liquid", "YOLOv8", "Python" , "Java", "MySQL", "React Native"
             ].map((tech) => (
               <span
                 key={tech}

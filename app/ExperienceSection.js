@@ -2,8 +2,17 @@
 import { motion } from "framer-motion";
 
 const experiences = [
+
+ {
+  date: "August 2025 - Present",
+  title: "Part-Time Faculty Instructor, BSIT Program",
+  company: "Holy Cross of Davao College",
+  description:
+    "Teach core and elective IT subjects including Human-Computer Interaction, Web Development (Next.js), Mobile Development (React Native), and System Administration with SQL and Database Fundamentals, focusing on both theory and hands-on application.",
+},
+
   {
-    date: "April 2025 - Present",
+    date: "April 2024 - Present",
     title: "Frontend Developer | UI/UX Designer ",
     company: "Freelance",
     description:

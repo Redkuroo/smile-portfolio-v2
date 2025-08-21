@@ -48,7 +48,7 @@ export default function AboutSection() {
 
 </p>
 <p className="light:text-gray-800">
-  Beyond coding, I'm a proud Portland Trail Blazers fan and a Mobile Legends gamer, thriving on both competition and creativity. I'm always learning, growing, and pushing boundaries—whether through design, development, or a clutch comeback in ranked matches.
+  Beyond coding, I'm a proud Portland Trail Blazers fan and a Mobile Legends gamer, thriving on both competition and creativity. I'm always learning, growing, and pushing boundaries whether through design, development, or a clutch comeback in ranked matches.
 </p>
 
         </motion.div>
@@ -66,7 +66,7 @@ export default function AboutSection() {
               <div className="font-bold text-lg light:text-[#18191A]">Education</div>
               <div className="text-gray-200 light:text-[#18191A]">Holy Cross of Davao College</div>
               <div className="text-gray-400 text-sm light:text-gray-900">Bachelor of Science in Information Technology</div>
-              <div className="text-gray-500 text-sm light:text-gray-900">Cum Laude</div>
+              <div className="text-gray-500 text-sm light:text-gray-900">Cum Laude - 94.25% GWA</div>
             </div>
           </div>
 
