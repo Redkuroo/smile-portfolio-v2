@@ -26,6 +26,7 @@ export default function AboutSection() {
     ],
     []
   );
+  const reversedCarouselImages = useMemo(() => [...carouselImages].slice().reverse(), [carouselImages]);
   const [zoomSrc, setZoomSrc] = useState(null);
   const [isTouch, setIsTouch] = useState(false);
 
@@ -137,7 +138,7 @@ export default function AboutSection() {
           {/* Carousel 2: right -> left (reverse animation) */}
           <div className="carousel overflow-hidden">
             <div className="carousel-track reverse" aria-hidden>
-              {[...carouselImages, ...carouselImages].map((src, i) => (
+              {[...reversedCarouselImages, ...reversedCarouselImages].map((src, i) => (
                 <div
                   key={`c2-${i}`}
                   className="carousel-item inline-block p-2"
@@ -167,7 +168,7 @@ export default function AboutSection() {
 
   {/* Styles for the carousels (scoped via global injection) */}
       <style>{`
-  .carousel { position: relative; --scroll-duration: 28s; }
+  .carousel { position: relative; --scroll-duration: 14s; }
   .carousel-track { display: flex; align-items: center; width: 200%; gap: 0.5rem; animation: scroll-left var(--scroll-duration) linear infinite; }
   .carousel-track.reverse { animation: scroll-right var(--scroll-duration) linear infinite; }
       .carousel-item { flex: 0 0 auto; }
