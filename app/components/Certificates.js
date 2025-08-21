@@ -205,7 +205,7 @@ export default function Certificates() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        About Me
+        Certificates
       </motion.h2>
 
       {/* Underline */}
