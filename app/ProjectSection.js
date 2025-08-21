@@ -136,6 +136,17 @@ const projectsData = [
     codeUrl: "https://www.figma.com/design/62Id4GggHC0VRs0cczHfP0/TheWanderClub_Hero_A-BTest_UIUX_JohnSmileMella?node-id=0-1&p=f&t=22nh2iwYQKELw4CI-0",
     demoUrl: "https://thewanderclub.com/?srsltid=AfmBOopwb_s69cp4tm5YYQXZfL9UL1mBsE7JlZOayUgtu9q9uvf2_9Qq"
   },
+  {
+    id: 13,
+    category: ["frontend"],
+    type: "Frontend Developer",
+    title: "Sanction System - Holy Cross of Davao College",
+    description: "This project is a web-based system for managing IT lab sanction requests at HCDC. It streamlines the process of submitting, reviewing, and approving lab usage requests, making it easier for students and staff to access IT resources efficiently.",
+    techs: ["React JS"],
+    image: "/projects/sanction.png",
+    codeUrl: "https://github.com/Redkuroo/Sanction-System",
+    demoUrl: "https://sanction-system-hcdc.vercel.app/"
+  },
 ];
 
 const filterOptions = [
