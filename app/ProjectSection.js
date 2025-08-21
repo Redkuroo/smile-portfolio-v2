@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Certificates from "./Certificates";
 
 // Project data with categories
 const projectsData = [
@@ -155,6 +156,7 @@ const filterOptions = [
   { id: "design", label: "Design" }
 ];
 
+
 export default function ProjectSection() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [openId, setOpenId] = useState(null);
@@ -168,7 +170,8 @@ export default function ProjectSection() {
         return cats.map(c => c.toLowerCase().trim()).includes(activeFilter.toLowerCase());
       });
   return (
-    <section id="projects" className="relative w-full min-h-screen px-6 md:px-28 py-16 overflow-hidden bg-[#18191A] light:bg-[#fff8f1] light:text-[#18191A]">
+    <>
+      <section id="projects" className="relative w-full min-h-screen px-6 md:px-28 py-16 overflow-hidden bg-[#18191A] light:bg-[#fff8f1] light:text-[#18191A]">
       {/* Header */}
       <div className="mb-10">
         <h2 className="text-3xl md:text-4xl font-extrabold text-left mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] light:text-[#18191A]">
@@ -288,6 +291,9 @@ export default function ProjectSection() {
           </p>
         </div>
       )}
-    </section>
+      </section>
+
+  <Certificates />
+    </>
   );
 }
