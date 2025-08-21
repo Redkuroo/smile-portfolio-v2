@@ -232,15 +232,13 @@ export default function Certificates() {
 
             <div className="mt-8">
               <a
-                href={selectedCert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
-                onMouseEnter={() => setSelectedId(selectedCert.id)}
-              >
-               
-                View Certificate
-              </a>
+                  href={selectedCert.url && selectedCert.url !== "#" ? selectedCert.url : selectedCert.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
+                >
+                  View Certificate
+                </a>
             </div>
 
             <div className="mt-6 text-sm text-white/70">
@@ -251,7 +249,6 @@ export default function Certificates() {
 
         {/* Right: preview card */}
         <div className="hidden lg:block w-96">
-          <div className="text-white/80 mb-3">Project Overview</div>
           <div className="bg-black/40 rounded-xl p-4">
             <div className="relative w-full h-56 rounded-md overflow-hidden">
               <motion.div
@@ -294,11 +291,11 @@ export default function Certificates() {
 
         {totalPages > 1 && (
           <div className="mt-6 flex items-center justify-center gap-3">
-            <button onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page === 1} className="px-3 py-1 rounded-md bg-gray-800 text-white/90 disabled:opacity-40">Prev</button>
+            <button onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page === 1} className="px-3 py-1 rounded-md bg-gray-800 text-white/90 disabled:opacity-40  cursor-pointer">Prev</button>
             {Array.from({ length: totalPages }).map((_, i) => (
-              <button key={i} onClick={() => setPage(i + 1)} className={`px-3 py-1 rounded-md ${page === i + 1 ? 'bg-[var(--accent)] text-white' : 'bg-gray-700 text-white/80'}`}>{i + 1}</button>
+              <button key={i} onClick={() => setPage(i + 1)} className={`px-3 py-1 rounded-md ${page === i + 1 ? 'bg-[var(--accent)] text-white' : 'bg-gray-700 text-white/80 cursor-pointer'}`}>{i + 1}</button>
             ))}
-            <button onClick={() => setPage((p) => Math.min(totalPages, p + 1))} disabled={page === totalPages} className="px-3 py-1 rounded-md bg-gray-800 text-white/90 disabled:opacity-40">Next</button>
+            <button onClick={() => setPage((p) => Math.min(totalPages, p + 1))} disabled={page === totalPages} className="px-3 py-1 rounded-md bg-gray-800 text-white/90 disabled:opacity-40 cursor-pointer">Next</button>
           </div>
         )}
       </div>

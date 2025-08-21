@@ -259,7 +259,7 @@ export default function ProjectSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className={`bg-[var(--accent)] hover:bg-[#6d3bbd] text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} cursor-pointer`}
+                      className={`bg-[var(--accent)] hover:bg-red-600 text-white text-sm px-3 py-1.5 rounded-sm font-medium transition ${openId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} cursor-pointer`}
                       aria-label={`${project.title} Source Code`}
                     >
                       {project.category === 'design' ? 'View' : 'Code'}
