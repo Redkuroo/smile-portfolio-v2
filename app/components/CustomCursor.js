@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 
 // Enhanced custom cursor with improved performance, visual effects, and interactions
 // Features: hover effects, click ripples, magnetic attraction, smooth interpolation
@@ -24,8 +25,9 @@ export default function EnhancedCustomCursor() {
     const mq = window.matchMedia && window.matchMedia("(pointer: coarse)");
     if (mq && mq.matches) return;
 
-    // Add global cursor hiding styles immediately
+    // Add global cursor hiding styles immediately and mark for cleanup
     const styleElement = document.createElement('style');
+    styleElement.setAttribute('data-cursor-styles', 'true');
     styleElement.innerHTML = `
       *, *::before, *::after {
         cursor: none !important;
@@ -163,7 +165,10 @@ export default function EnhancedCustomCursor() {
     };
   }, [lerp]);
 
-  return (
+  // Render cursor UI into document.body so it overlays any app content or modals
+  if (typeof document === "undefined") return null;
+
+  const portalContent = (
     <>
       <div ref={streaksRef} aria-hidden className="pointer-events-none fixed inset-0 z-[9998]"></div>
       <div
@@ -329,4 +334,6 @@ export default function EnhancedCustomCursor() {
       `}</style>
     </>
   );
+
+  return createPortal(portalContent, document.body);
 }
