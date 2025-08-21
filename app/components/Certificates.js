@@ -277,9 +277,10 @@ export default function Certificates() {
             <button
               key={cert.id}
               onClick={() => setSelectedId(cert.id)}
-              className={`flex items-center gap-3 p-2 rounded-md transition ${selectedId === cert.id ? 'ring-2 ring-[var(--accent)]' : 'hover:scale-105'}`}
+              aria-pressed={selectedId === cert.id}
+              className={`flex items-center gap-3 p-2 rounded-md transition transform ${selectedId === cert.id ? 'ring-2 ring-[var(--accent)] bg-[var(--accent)]/10 scale-105 shadow-lg' : 'hover:scale-105 hover:bg-white/5'}`}
             >
-              <div className="w-40 h-24 relative rounded-md overflow-hidden bg-gray-800">
+              <div className={`w-40 h-24 relative rounded-md overflow-hidden bg-gray-800 ${selectedId === cert.id ? 'ring-1 ring-white/20' : ''}`}>
                 <Image src={cert.image} alt={cert.title} fill className="object-cover" />
               </div>
               <div className="text-left">
