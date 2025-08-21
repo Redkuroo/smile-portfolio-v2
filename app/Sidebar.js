@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub, FaBehance } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub, FaBehance, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -16,7 +16,7 @@ const socials = [
   { href: "https://www.linkedin.com/in/john-smile-mella-064a12347/", label: "LinkedIn", icon: <FaLinkedinIn size={22} /> },
   { href: "https://www.instagram.com/j_smileeeee/", label: "Instagram", icon: <FaInstagram size={22} /> },
   { href: "https://github.com/Redkuroo", label: "GitHub", icon: <FaGithub size={22} /> },
-  { href: "https://www.behance.net/", label: "Behance", icon: <FaBehance size={22} /> },
+  { href: "https://www.behance.net/smilemella", label: "Behance", icon: <FaBehance size={22} /> },
 ];
 
 export default function Sidebar() {
@@ -29,24 +29,29 @@ export default function Sidebar() {
       <div className="md:hidden fixed top-0 left-0 w-full h-16 bg-black flex items-center justify-between px-4 z-50 shadow-lg">
         <button onClick={toggleTheme} className="text-[var(--accent)] hover:text-white transition mr-2">
           {theme === 'dark' ? (
-            <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 16v2m11-11h-2M3 12H1m16.95 6.95-1.41-1.41M6.46 6.46 5.05 5.05m12.02 0-1.41 1.41M6.46 17.54l-1.41 1.41"/></svg>
+            <FaSun size={22} />
           ) : (
-            <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            <FaMoon size={22} />
           )}
         </button>
-        <button onClick={() => setOpen(!open)} className="text-white focus:outline-none">
-          <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="7" x2="24" y2="7"/><line x1="4" y1="14" x2="24" y2="14"/><line x1="4" y1="21" x2="24" y2="21"/></svg>
+        <button
+          onClick={() => setOpen(!open)}
+          className="text-white focus:outline-none"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          {open ? <FaTimes size={22} /> : <FaBars size={22} />}
         </button>
       </div>
       {/* Sidebar */}
       <aside className={`fixed top-0 left-0 h-screen w-16 flex flex-col items-center bg-black/90 border-r border-gray-800 z-50 shadow-lg transition-transform duration-300
-        ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:flex`}>
+        ${open ? "translate-x-0" : "-translate-x-full "} md:translate-x-0 md:flex `}>
         {/* Light/Dark Toggle */}
-        <button onClick={toggleTheme} className="mt-6 mb-4 text-[var(--accent)] hover:text-white transition">
+        <button onClick={toggleTheme} className="mt-6 mb-4 text-[var(--accent)] hover:text-white transition cursor-pointer ">
           {theme === 'dark' ? (
-            <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 16v2m11-11h-2M3 12H1m16.95 6.95-1.41-1.41M6.46 6.46 5.05 5.05m12.02 0-1.41 1.41M6.46 17.54l-1.41 1.41"/></svg>
+            <FaSun size={22} />
           ) : (
-            <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            <FaMoon size={22} />
           )}
         </button>
         <div className="flex flex-col flex-1 justify-center gap-20 w-full items-center">
