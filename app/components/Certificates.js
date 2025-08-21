@@ -16,7 +16,6 @@ export default function Certificates() {
       issuer: "Google / Volunteer",
       category: "it",
       date: "2024",
-      tags: ["Google", "Volunteering"],
       image: "/projects/goplus.png",
       url: "#"
     },
@@ -26,7 +25,6 @@ export default function Certificates() {
       issuer: "Coursera / University",
       category: "programming",
       date: "Mar 2024",
-      tags: ["Web", "Fullstack"],
       image: "/a.jpg",
       url: "#"
     },
@@ -36,7 +34,6 @@ export default function Certificates() {
       issuer: "Frontend Masters",
       category: "programming",
       date: "Jun 2024",
-      tags: ["React", "Frontend"],
       image: "/b.jpg",
       url: "#"
     },
@@ -46,7 +43,6 @@ export default function Certificates() {
       issuer: "Design Institute",
       category: "uiux",
       date: "Dec 2023",
-      tags: ["Design", "UX"],
       image: "/c.jpg",
       url: "#"
     },
@@ -56,7 +52,6 @@ export default function Certificates() {
       issuer: "Issuer 5",
       category: "competitions",
       date: "2022",
-      tags: ["TagA"],
       image: "/a.jpg",
       url: "#"
     },
@@ -66,7 +61,6 @@ export default function Certificates() {
       issuer: "Issuer 6",
       category: "it",
       date: "2021",
-      tags: ["TagB"],
       image: "/b.jpg",
       url: "#"
     },
@@ -76,7 +70,6 @@ export default function Certificates() {
       issuer: "Issuer 7",
       category: "competitions",
       date: "2020",
-      tags: ["TagC"],
       image: "/c.jpg",
       url: "#"
     }
@@ -143,18 +136,12 @@ export default function Certificates() {
         {/* Left: big typographic title and meta */}
         <div className="lg:flex-1">
           <div className="max-w-3xl">
-            <div className="text-[12px] text-white/60 mb-6">16.</div>
+    
             <h3 className="text-5xl md:text-7xl font-extrabold leading-tight text-white/95 tracking-tight">
               {selectedCert.title}
             </h3>
 
-            <div className="mt-6 flex flex-wrap gap-3 items-center">
-              {selectedCert.tags?.map((t) => (
-                <span key={t} className="px-3 py-1 rounded-full bg-black/40 text-white text-sm border border-white/10">
-                  {t}
-                </span>
-              ))}
-            </div>
+            {/* tags removed */}
 
             <div className="mt-8">
               <a
@@ -193,13 +180,7 @@ export default function Certificates() {
               </motion.div>
             </div>
 
-            <div className="mt-3 flex flex-wrap gap-2">
-              {selectedCert.tags?.map((t) => (
-                <span key={t} className="px-3 py-1 rounded-full bg-black/30 text-white text-xs border border-white/10">
-                  {t}
-                </span>
-              ))}
-            </div>
+            {/* tags removed */}
           </div>
         </div>
       </div>
