@@ -36,7 +36,7 @@ export default function Certificates() {
     title: 'UI! UXpect the unxpected | UI/UX For Starters Workshop',
     issuer: 'Google Developer Groups on Campus UIC',
     date: '2025',
-    image: '/certificates/uiux.png  ',
+    image: '/certificates/uiux.png',
     description: 'Workshop for fostering a productive UI/UX learning',
     category: 'uiux'
   },
