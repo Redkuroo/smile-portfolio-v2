@@ -144,7 +144,7 @@ export default function Certificates() {
         <div className="lg:flex-1">
           <div className="max-w-3xl">
             <div className="text-[12px] text-white/60 mb-6">16.</div>
-            <h3 className="font-serif italic text-5xl md:text-7xl leading-tight text-white/95 tracking-tight">
+            <h3 className="text-5xl md:text-7xl font-extrabold leading-tight text-white/95 tracking-tight">
               {selectedCert.title}
             </h3>
 
