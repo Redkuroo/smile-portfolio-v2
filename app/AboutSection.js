@@ -43,12 +43,12 @@ export default function AboutSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
        <p className="light:text-gray-800">
- Hello! I'm a front-end developer and UI/UX designer based in Davao City, Philippines. I specialize in creating clean, responsive, and engaging user interfaces using tools like React and Tailwind CSS. I'm passionate about crafting designs that are not only visually appealing but also intuitive and user-friendly.
+ Hello! I&apos;m a front-end developer and UI/UX designer based in Davao City, Philippines. I specialize in creating clean, responsive, and engaging user interfaces using tools like React and Tailwind CSS. I&apos;m passionate about crafting designs that are not only visually appealing but also intuitive and user-friendly.
 
 
 </p>
 <p className="light:text-gray-800">
-  Beyond coding, I'm a proud Portland Trail Blazers fan and a Mobile Legends gamer, thriving on both competition and creativity. I'm always learning, growing, and pushing boundaries whether through design, development, or a clutch comeback in ranked matches.
+  Beyond coding, I&apos;m a proud Portland Trail Blazers fan and a Mobile Legends gamer, thriving on both competition and creativity. I&apos;m always learning, growing, and pushing boundaries whether through design, development, or a clutch comeback in ranked matches.
 </p>
 
         </motion.div>
