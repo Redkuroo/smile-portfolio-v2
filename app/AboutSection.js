@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 
 const textFadeIn = {
   initial: { opacity: 0, y: 40 },
@@ -8,7 +9,23 @@ const textFadeIn = {
 };
 
 export default function AboutSection() {
+  const carouselImages = useMemo(
+    () => [
+      "/projects/chatsdk.png",
+      "/projects/colina.jpg",
+      "/projects/dresscan.jpg",
+      "/projects/elms.PNG",
+      "/projects/esports.png",
+      "/projects/goplus.png",
+      "/projects/jit.png",
+      "/projects/luxe.png",
+      "/projects/smovers.PNG",
+      "/projects/wanderclub.png",
+    ],
+    []
+  );
   return (
+    <>
     <section
       id="about"
       className="w-full min-h-[60vh] bg-[#18191A] px-8 md:px-32 py-20 flex flex-col justify-center light:bg-[#fff8f1] light:text-[#18191A]"
@@ -73,6 +90,63 @@ export default function AboutSection() {
    
         </motion.div>
       </div>
-    </section>
+
+      {/* Carousels */}
+      <div className="mt-12">
+        <div className="relative">
+          {/* Left/Right glowing fades */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-blue-500/60 to-transparent blur-sm" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-blue-500/60 to-transparent blur-sm" />
+
+          {/* Carousel 1: left -> right (we animate translateX negative to move left) */}
+          <div className="carousel overflow-hidden">
+            <div className="carousel-track" aria-hidden>
+              {[...carouselImages, ...carouselImages].map((src, i) => (
+                <div key={`c1-${i}`} className="carousel-item inline-block p-2">
+                  <img src={src} alt={`carousel ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Spacer */}
+          <div className="h-6" />
+
+          {/* Carousel 2: right -> left (reverse animation) */}
+          <div className="carousel overflow-hidden">
+            <div className="carousel-track reverse" aria-hidden>
+              {[...carouselImages, ...carouselImages].map((src, i) => (
+                <div key={`c2-${i}`} className="carousel-item inline-block p-2">
+                  <img src={src} alt={`carousel rev ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  {/* Styles for the carousels (scoped via global injection) */}
+  <style>{`
+      .carousel { position: relative; }
+      .carousel-track { display: flex; align-items: center; width: 200%; gap: 0.5rem; animation: scroll-left 28s linear infinite; }
+      .carousel-track.reverse { animation: scroll-right 28s linear infinite; }
+      .carousel-item { flex: 0 0 auto; }
+
+      @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      @keyframes scroll-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+
+      /* Make the gradients glow a bit stronger on larger screens */
+      @media (min-width: 768px) {
+        .carousel-item img { height: 9rem; }
+      }
+    `}</style>
+    </>
   );
 }
