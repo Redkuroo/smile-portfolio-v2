@@ -235,12 +235,10 @@ export default function Certificates() {
                 href={selectedCert.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-white/5 transition"
+                className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
                 onMouseEnter={() => setSelectedId(selectedCert.id)}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                </svg>
+               
                 View Certificate
               </a>
             </div>
@@ -279,7 +277,6 @@ export default function Certificates() {
             <button
               key={cert.id}
               onClick={() => setSelectedId(cert.id)}
-              onMouseEnter={() => setSelectedId(cert.id)}
               className={`flex items-center gap-3 p-2 rounded-md transition ${selectedId === cert.id ? 'ring-2 ring-[var(--accent)]' : 'hover:scale-105'}`}
             >
               <div className="w-40 h-24 relative rounded-md overflow-hidden bg-gray-800">
