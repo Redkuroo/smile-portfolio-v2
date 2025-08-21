@@ -12,7 +12,7 @@ export default function Certificates() {
   const certificateData = [
     {
       id: 1,
-      title: "Google I/O Extended 2024 Volunteer",
+      title: "CAPSTONE PROJECT WRITING 1 WORKSHOP_CERTIFICATES.pdf",
       issuer: "Google / Volunteer",
       category: "it",
       date: "2024",
@@ -71,6 +71,157 @@ export default function Certificates() {
       category: "competitions",
       date: "2020",
       image: "/c.jpg",
+      url: "#"
+    }
+    ,
+    {
+      id: 8,
+      title: "Research Presenter for the Parallel Theme 1 - Data Innovation",
+      issuer: "Center for Research and Publication",
+      date: "2025",
+      image: "/certificates/research 2025.jpg",
+      description: "Presented our capstone project titled Dresscan during the Joint Research Conference of Maritime Education, Criminal Justice Education and College of Engineering and Technology.",
+      category: "competitions",
+      url: "#"
+    },
+    {
+      id: 9,
+      title: "Introduction to HTML",
+      issuer: "Simplilearn",
+      date: "2025",
+      image: "/certificates/html 2025.jpg",
+      description: "Deepening skills in HTML.",
+      category: "programming",
+      url: "#"
+    },
+    {
+      id: 10,
+      title: "UI! UXpect the unxpected | UI/UX For Starters Workshop",
+      issuer: "Google Developer Groups on Campus UIC",
+      date: "2025",
+      image: "/certificates/uiux.png",
+      description: "Workshop for fostering a productive UI/UX learning",
+      category: "uiux",
+      url: "#"
+    },
+    {
+      id: 11,
+      title: "Capstone Project Writing 1 Workshop",
+      issuer: "Holy Cross of Davao College - BSIT",
+      date: "2024",
+      image: "/certificates/CAPSTONE PROJECT WRITING 1 WORKSHOP_CERTIFICATES.pdf.jpg",
+      description: "Participation for the capstone project writing workshop.",
+      category: "programming",
+      url: "#"
+    },
+    {
+      id: 12,
+      title: "Capstone Project Writing 2 Workshop",
+      issuer: "Holy Cross of Davao College - BSIT",
+      date: "2024",
+      image: "/certificates/CAPSTONE PROJECT WRITING 2 WORKSHOP_CERTIFICATES.pdf.jpg",
+      description: "Participation for the capstone project writing workshop.",
+      category: "programming",
+      url: "#"
+    },
+    {
+      id: 13,
+      title: "JavaScript Tutorial: Learn JavaScript in 1 Hour",
+      issuer: "Learnoverse",
+      date: "2024",
+      image: "/certificates/javascript 2024.jpg",
+      description: "An Online Course for JavaScript.",
+      category: "programming",
+      url: "#"
+    },
+    {
+      id: 14,
+      title: "Blockchain Campus Conference 2024",
+      issuer: "The Blocklabs, Inc.",
+      date: "2024",
+      image: "/certificates/Js Mella_BCC Mindanao 2024 Cert.pdf.jpg",
+      description: "Attended the Blockchain Conference at Mapua Malayan Colleges Mindanao.",
+      category: "it",
+      url: "#"
+    },
+    {
+      id: 15,
+      title: "Mindanao Conference of Information Technology (MCITS) 2024",
+      issuer: "PSITE XI, CDITE XI",
+      date: "2024",
+      image: "/certificates/mcits 2024.jpg",
+      description: "Participated the MCITS 2024.",
+      category: "it",
+      url: "#"
+    },
+    {
+      id: 16,
+      title: "1st Runner Up in the Networking Competition",
+      issuer: "Holy Cross of Davao College - CET",
+      date: "2024",
+      image: "/certificates/networking 2024.jpg",
+      description: "CET TechnoFair 2024 Networking Competition 1st Runner Up.",
+      category: "competitions",
+      url: "#"
+    },
+    {
+      id: 17,
+      title: "IT Olympiad 2024 - ACM Programming Competition",
+      issuer: "PSITE XI, CDITE XI",
+      date: "2024",
+      image: "/certificates/programmin 2024.jpg",
+      description: "Competitor for the Holy Cross of Davao College for the Programming Contest of PSITS.",
+      category: "competitions",
+      url: "#"
+    },
+    {
+      id: 18,
+      title: "10th TOPCIT Level 2 Passer",
+      issuer: "TOPCIT",
+      date: "2024",
+      image: "/certificates/topcit 2024 (2).jpg",
+      description: "HCDC Test Taker for the 10th TOPCIT Philippines (Level 2 Passer).",
+      category: "competitions",
+      url: "#"
+    },
+    {
+      id: 19,
+      title: "11th TOPCIT Level 2 Passer",
+      issuer: "TOPCIT",
+      date: "2024",
+      image: "/certificates/topcit 2024.jpg",
+      description: "HCDC Test Taker for the 11th TOPCIT Philippines (Level 2 Passer).",
+      category: "competitions",
+      url: "#"
+    },
+    {
+      id: 20,
+      title: "Crack the Code: An Introduction to IOS Development",
+      issuer: "fix my mac.",
+      date: "2023",
+      image: "/certificates/crack the code 2023.jpg",
+      description: "A workshop for Swift programming language.",
+      category: "programming",
+      url: "#"
+    },
+    {
+      id: 21,
+      title: "Data Visualization",
+      issuer: "Smart Wireless Engineering Education Program",
+      date: "2023",
+      image: "/certificates/John Smile Mella Certificate.pdf.jpg",
+      description: "A webinar for Data Visualization Techniques.",
+      category: "programming",
+      url: "#"
+    },
+    {
+      id: 22,
+      title: "MCITS 2023",
+      issuer: "PSITE XI, CDITE XI",
+      date: "2023",
+      image: "/certificates/mcits 2023.jpg",
+      description: "Mindanao Conference for IT Students.",
+      category: "it",
       url: "#"
     }
   ];
