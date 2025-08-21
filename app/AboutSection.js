@@ -168,7 +168,7 @@ export default function AboutSection() {
 
   {/* Styles for the carousels (scoped via global injection) */}
       <style>{`
-  .carousel { position: relative; --scroll-duration: 14s; }
+  .carousel { position: relative; --scroll-duration: 28s; }
   .carousel-track { display: flex; align-items: center; width: 200%; gap: 0.5rem; animation: scroll-left var(--scroll-duration) linear infinite; }
   .carousel-track.reverse { animation: scroll-right var(--scroll-duration) linear infinite; }
       .carousel-item { flex: 0 0 auto; }
