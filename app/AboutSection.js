@@ -60,7 +60,7 @@ export default function AboutSection() {
 
       {/* Underline */}
       <motion.div
-        className="w-16 h-1 bg-[var(--accent)] mb-10 rounded"
+        className="w-20 h-1.5 bg-[var(--accent)] mb-10 rounded-full"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
