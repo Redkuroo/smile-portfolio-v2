@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 const textFadeIn = {
   initial: { opacity: 0, y: 40 },
@@ -11,19 +11,36 @@ const textFadeIn = {
 export default function AboutSection() {
   const carouselImages = useMemo(
     () => [
-      "/projects/chatsdk.png",
-      "/projects/colina.jpg",
-      "/projects/dresscan.jpg",
-      "/projects/elms.PNG",
-      "/projects/esports.png",
-      "/projects/goplus.png",
-      "/projects/jit.png",
-      "/projects/luxe.png",
-      "/projects/smovers.PNG",
-      "/projects/wanderclub.png",
+      "/about/1.jpg",
+      "/about/2.jpg",
+      "/about/3.jpg",
+      "/about/4.jpg",
+      "/about/5.jpg",
+      "/about/6.jpg",
+      "/about/7.jpg",
+      "/about/8.png",
+      "/about/9.png",
+      "/about/10.png",
+      "/about/t15.png",
+   
     ],
     []
   );
+  const [zoomSrc, setZoomSrc] = useState(null);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia('(hover: none) and (pointer: coarse)');
+    const update = () => setIsTouch(mq.matches);
+    update();
+    if (mq.addEventListener) mq.addEventListener('change', update);
+    else mq.addListener(update);
+    return () => {
+      if (mq.removeEventListener) mq.removeEventListener('change', update);
+      else mq.removeListener(update);
+    };
+  }, []);
   return (
     <>
     <section
@@ -95,15 +112,26 @@ export default function AboutSection() {
       <div className="mt-12">
         <div className="relative">
           {/* Left/Right glowing fades */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-blue-500/60 to-transparent blur-sm" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-blue-500/60 to-transparent blur-sm" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-red-500/60 to-transparent blur-sm" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-red-500/60 to-transparent blur-sm" />
 
           {/* Carousel 1: left -> right (we animate translateX negative to move left) */}
           <div className="carousel overflow-hidden">
             <div className="carousel-track" aria-hidden>
               {[...carouselImages, ...carouselImages].map((src, i) => (
-                <div key={`c1-${i}`} className="carousel-item inline-block p-2">
-                  <img src={src} alt={`carousel ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                <div
+                  key={`c1-${i}`}
+                  className="carousel-item inline-block p-2"
+                >
+                  <button
+                    type="button"
+                    onClick={() => { if (isTouch) setZoomSrc(src); }}
+                    onKeyDown={(e) => { if (e.key === 'Enter') setZoomSrc(src); }}
+                    className="focus:outline-none"
+                    aria-label={`Open image ${i}`}
+                  >
+                    <img src={src} alt={`carousel ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                  </button>
                 </div>
               ))}
             </div>
@@ -116,8 +144,19 @@ export default function AboutSection() {
           <div className="carousel overflow-hidden">
             <div className="carousel-track reverse" aria-hidden>
               {[...carouselImages, ...carouselImages].map((src, i) => (
-                <div key={`c2-${i}`} className="carousel-item inline-block p-2">
-                  <img src={src} alt={`carousel rev ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                <div
+                  key={`c2-${i}`}
+                  className="carousel-item inline-block p-2"
+                >
+                  <button
+                    type="button"
+                    onClick={() => { if (isTouch) setZoomSrc(src); }}
+                    onKeyDown={(e) => { if (e.key === 'Enter') setZoomSrc(src); }}
+                    className="focus:outline-none"
+                    aria-label={`Open image rev ${i}`}
+                  >
+                    <img src={src} alt={`carousel rev ${i}`} className="h-28 md:h-36 object-cover rounded-lg shadow-md" />
+                  </button>
                 </div>
               ))}
             </div>
@@ -126,12 +165,30 @@ export default function AboutSection() {
       </div>
   </section>
 
+        {/* Zoom modal (mobile click) */}
+        {zoomSrc && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+            onClick={() => setZoomSrc(null)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <img src={zoomSrc} alt="zoomed" className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl" />
+          </div>
+        )}
+
   {/* Styles for the carousels (scoped via global injection) */}
-  <style>{`
+      <style>{`
       .carousel { position: relative; }
       .carousel-track { display: flex; align-items: center; width: 200%; gap: 0.5rem; animation: scroll-left 28s linear infinite; }
       .carousel-track.reverse { animation: scroll-right 28s linear infinite; }
       .carousel-item { flex: 0 0 auto; }
+
+      /* Hover zoom for non-touch devices */
+      @media (hover: hover) and (pointer: fine) {
+        .carousel-item img { transition: transform 220ms ease, box-shadow 220ms ease; }
+        .carousel-item img:hover { transform: scale(1.08); box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+      }
 
       @keyframes scroll-left {
         0% { transform: translateX(0); }
@@ -150,3 +207,5 @@ export default function AboutSection() {
     </>
   );
 }
+
+// Add modal outside component scope? No - keep simple: modal is rendered conditionally inside component return.
