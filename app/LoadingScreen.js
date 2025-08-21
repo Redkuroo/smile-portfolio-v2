@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { FiSmile } from "react-icons/fi";
 
 export default function LoadingScreen() {
   const [percent, setPercent] = useState(0);
@@ -49,20 +50,8 @@ export default function LoadingScreen() {
 
       {/* Glowing Icon */}
       <div className="relative mb-8">
-        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#6d3bbd] flex items-center justify-center shadow-2xl animate-glow">
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 2H8C6.34315 2 5 3.34315 5 5V8C5 9.65685 6.34315 11 8 11H12V2Z" fill="white"/>
-            <path d="M12 11H8C6.34315 11 5 12.3431 5 14V17C5 18.6569 6.34315 20 8 20H12V11Z" fill="white"/>
-            <path d="M19 5C19 3.34315 17.6569 2 16 2H12V11H16C17.6569 11 19 9.65685 19 8V5Z" fill="white"/>
-            <path d="M19 14C19 12.3431 17.6569 11 16 11H12V20H16C17.6569 20 19 18.6569 19 17V14Z" fill="white"/>
-            <path d="M12 11H16C17.6569 11 19 12.3431 19 14V17C19 18.6569 17.6569 20 16 20H12V11Z" fill="white"/>
-          </svg>
+        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--accent)] flex items-center justify-center shadow-2xl animate-glow">
+          <FiSmile className="h-14 w-14 text-white" aria-hidden />
         </div>
       </div>
 
