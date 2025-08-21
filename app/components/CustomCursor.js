@@ -14,29 +14,21 @@ export default function EnhancedCustomCursor() {
   const targetPos = useRef({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const lerp = useCallback((start, end, factor) => {
     return start + (end - start) * factor;
   }, []);
 
   useEffect(() => {
-    // Don't run on touch devices
-    if (typeof window === "undefined") return;
+  // Don't initialize until portal has been mounted to the DOM
+  if (!mounted) return;
+  // Don't run on touch devices
+  if (typeof window === "undefined") return;
     const mq = window.matchMedia && window.matchMedia("(pointer: coarse)");
     if (mq && mq.matches) return;
 
-    // Add global cursor hiding styles immediately and mark for cleanup
-    const styleElement = document.createElement('style');
-    styleElement.setAttribute('data-cursor-styles', 'true');
-    styleElement.innerHTML = `
-      *, *::before, *::after {
-        cursor: none !important;
-      }
-      html, body {
-        cursor: none !important;
-      }
-    `;
-    document.head.appendChild(styleElement);
+  // Do not hide the default system cursor; keep this component purely decorative.
 
     const cursor = cursorRef.current;
     const streaks = streaksRef.current;
@@ -148,25 +140,35 @@ export default function EnhancedCustomCursor() {
     
     rafRef.current = requestAnimationFrame(render);
 
-    return () => {
+  return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mousedown", onMouseDown);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       
-      // Clean up the injected styles
-      const injectedStyles = document.querySelector('style[data-cursor-styles]');
-      if (injectedStyles) {
-        injectedStyles.remove();
-      }
-      
-      // Restore default cursors
-      document.documentElement.style.cursor = '';
-      document.body.style.cursor = '';
+  // No injected global styles to remove; leave system cursor untouched.
     };
-  }, [lerp]);
+  }, [lerp, mounted]);
 
-  // Render cursor UI into document.body so it overlays any app content or modals
-  if (typeof document === "undefined") return null;
+  // Set mounted after first client render so the portal can be created.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Remove any previously injected style tags that hid the default cursor (from earlier hot reloads)
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const styles = Array.from(document.head.querySelectorAll('style'));
+    styles.forEach((s) => {
+      try {
+        const txt = s.textContent || '';
+        if (txt.includes('cursor: none') && (txt.includes('Hide default cursor') || txt.includes('custom-cursor') || txt.includes('*,'))) {
+          s.remove();
+        }
+      } catch (e) {
+        // ignore
+      }
+    });
+  }, []);
 
   const portalContent = (
     <>
@@ -180,20 +182,8 @@ export default function EnhancedCustomCursor() {
       />
 
       <style>{`
-        /* Hide default cursor globally */
-        html, body, *, *::before, *::after {
-          cursor: none !important;
-        }
-        
-        /* Ensure cursor works across all elements */
-        html {
-          cursor: none !important;
-        }
-        
-        /* Force cursor hiding on common elements */
-        a, button, input, textarea, select, [role="button"] {
-          cursor: none !important;
-        }
+  /* Decorative cursor overlay: do not hide user's default cursor */
+  /* Keep trails and ripples; the system cursor remains visible */
 
         .custom-cursor {
           width: 24px;
@@ -335,5 +325,12 @@ export default function EnhancedCustomCursor() {
     </>
   );
 
-  return createPortal(portalContent, document.body);
+  // Always render a placeholder div so the server and client HTML match during hydration.
+  // The actual cursor UI is portaled into document.body only after mount.
+  return (
+    <>
+      <div aria-hidden="true" className="custom-cursor-placeholder" />
+      {mounted && typeof document !== "undefined" ? createPortal(portalContent, document.body) : null}
+    </>
+  );
 }
