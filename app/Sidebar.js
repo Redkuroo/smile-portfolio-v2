@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub, FaBehance } from 'react-icons/fa';
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -10,13 +11,12 @@ const navLinks = [
   { href: "#projects", label: "Projects" },
 ];
 
-import { FacebookIcon, LinkedinIcon, InstagramIcon, GithubIcon } from "lucide-react";
-
 const socials = [
-  { href: "#", label: "Facebook", icon: <FacebookIcon size={22} /> },
-  { href: "#", label: "LinkedIn", icon: <LinkedinIcon size={22} /> },
-  { href: "#", label: "Instagram", icon: <InstagramIcon size={22} /> },
-  { href: "#", label: "GitHub", icon: <GithubIcon size={22} /> },
+  { href: "https://www.facebook.com/js.mella.9", label: "Facebook", icon: <FaFacebookF size={22} /> },
+  { href: "https://www.linkedin.com/in/john-smile-mella-064a12347/", label: "LinkedIn", icon: <FaLinkedinIn size={22} /> },
+  { href: "https://www.instagram.com/j_smileeeee/", label: "Instagram", icon: <FaInstagram size={22} /> },
+  { href: "https://github.com/Redkuroo", label: "GitHub", icon: <FaGithub size={22} /> },
+  { href: "https://www.behance.net/", label: "Behance", icon: <FaBehance size={22} /> },
 ];
 
 export default function Sidebar() {
@@ -86,4 +86,4 @@ export default function Sidebar() {
       {open && <div className="fixed inset-0 bg-black/60 z-40 md:hidden" onClick={() => setOpen(false)} />}
     </>
   );
-} 
+}
