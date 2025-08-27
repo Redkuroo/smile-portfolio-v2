@@ -29,18 +29,33 @@ function handleBookMeeting(e) {
     }
   }
   function handleViewResume(e) {
-    // keep default href for progressive enhancement, but also open programmatically
-    if (e) e.preventDefault()
+    // prevent any default navigation and stop propagation
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
     if (typeof window === 'undefined') return
-  const origin = window.location?.origin || ''
-  const url = `${origin}/John_Smile_Mella_Resume.pdf`
+    const origin = window.location?.origin || ''
+    const url = `${origin}/John_Smile_Mella_Resume.pdf`
     try {
-      const w = window.open(url, '_blank', 'noopener,noreferrer')
-      if (w) w.focus()
-      else window.location.href = url
+      // create an anchor and trigger a click — this reliably opens a new tab
+      const a = document.createElement('a')
+      a.href = url
+      a.target = '_blank'
+      a.rel = 'noopener noreferrer'
+      // append to DOM to ensure click works in all browsers
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
     } catch (err) {
-      // fallback to direct navigation
-      window.location.href = url
+      // as a last resort, try window.open but don't navigate the current window
+      try {
+        const w = window.open(url, '_blank', 'noopener,noreferrer')
+        if (w) w.focus()
+      } catch (e2) {
+        // nothing else we can do safely without navigating away
+        console.error('Unable to open resume in new tab:', e2)
+      }
     }
   }
   useEffect(() => {
@@ -98,16 +113,14 @@ function handleBookMeeting(e) {
             ))}
 
               <div className="mt-8">
-              <a
-                  href={"/John_Smile_Mella_Resume.pdf"}
+              <button
+                  type="button"
                   onClick={handleViewResume}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  aria-label="View Resume (opens in new tab)"
                   className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
                 >
                  View Resume
-                </a>
+                </button>
             </div>
 
               <div className="mt-8">
