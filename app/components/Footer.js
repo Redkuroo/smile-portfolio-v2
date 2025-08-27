@@ -41,21 +41,25 @@ export default function Footer() {
       {/* Outer rounded card to match the screenshot */}
       <div className="max-w-6xl mx-auto px-6">
         <div
-          className="bg-[rgba(255,255,255,0.02)] rounded-3xl overflow-hidden shadow-lg ring-1 ring-gray-100"
+          className="rounded-3xl overflow-hidden shadow-lg ring-1 ring-gray-100"
           role="region"
           aria-label="Call to action"
-          style={{ boxShadow: '0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)' }}
+          style={{
+            boxShadow: '0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)',
+            backgroundImage: "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('/connect.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
         >
           {/* Top CTA */}
           <div className="py-12 px-10 text-center">
-            <h3 className="text-4xl font-extrabold" style={{ color: 'var(--foreground)' }}>Let&apos;s Collaborate</h3>
+            <h3 className="text-4xl font-extrabold" style={{ color: 'var(--foreground)' }}>Let&apos;s Connect</h3>
             <p className="mt-2 text-sm" style={{ color: 'rgba(237,237,237,0.8)' }}>Arrange a time to discuss your goals and turn your project into success.</p>
 
             <div className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto">
               <button
                 onClick={handleBookMeeting}
-                className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-white px-4 py-2 text-sm font-medium shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none transition-transform transform hover:scale-105 cursor-pointer"
-                style={{ background: 'var(--accent)', boxShadow: '0 6px 18px rgba(255,89,89,0.12)' }}
+                className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
                 aria-label="Book a meeting"
               >
                 Book a meeting

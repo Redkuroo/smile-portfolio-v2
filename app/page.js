@@ -14,7 +14,20 @@ const LoadingScreen = dynamic(() => import("./LoadingScreen"), { ssr: false });
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const { toggleTheme, theme } = useTheme();
-
+const calLink = process.env.NEXT_PUBLIC_CAL_LINK || 'https://cal.com/john-smile-mella-5lwhzm'
+function handleBookMeeting(e) {
+    e.preventDefault()
+    if (typeof window === 'undefined') return
+    
+    try {
+      const w = window.open(calLink, '_blank', 'noopener,noreferrer')
+      if (w) w.focus()
+    } catch (err) {
+      console.error('Failed to open booking link:', err)
+      // Fallback: navigate to the link directly
+      window.location.href = calLink
+    }
+  }
   useEffect(() => {
     // Show loading screen for the full animation duration (4s + 0.5s fade)
     let timer = setTimeout(() => {
@@ -82,12 +95,13 @@ export default function Home() {
 
               <div className="mt-8">
               <a
+                 onClick={handleBookMeeting}
                   href={"/John_Smile_Resume.pdf"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
                 >
-                 Contact Me
+                 Blast Off a Meeting
                 </a>
             </div>
           </div>
