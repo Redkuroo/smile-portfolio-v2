@@ -19,6 +19,16 @@ export default function Footer() {
   ]
   const legal = ['Terms of service', 'Privacy policy', 'Cookie policy']
 
+  // Cal.com scheduling link — override with NEXT_PUBLIC_CAL_LINK in .env
+  const calLink = process.env.NEXT_PUBLIC_CAL_LINK || 'https://cal.com/your-username'
+
+  function openCal(e) {
+    if (e && e.preventDefault) e.preventDefault()
+    if (typeof window === 'undefined') return
+    const w = window.open(calLink, 'cal', 'width=900,height=700,noopener,noreferrer')
+    try { if (w) w.focus() } catch (err) {}
+  }
+
   return (
   <footer className="mt-16" role="contentinfo">
     <h2 className="sr-only">Footer</h2>
@@ -35,7 +45,7 @@ export default function Footer() {
             <h3 className="text-4xl font-extrabold" style={{ color: 'var(--foreground)' }}>Let’s Collaborate</h3>
             <p className="mt-2 text-sm" style={{ color: 'rgba(237,237,237,0.8)' }}>Arrange a time to discuss your goals and turn your project into success.</p>
 
-            <form className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <form className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto" onSubmit={openCal}>
               <label htmlFor="newsletter-email" className="sr-only">Email address</label>
               <input
                 id="newsletter-email"
@@ -50,16 +60,15 @@ export default function Footer() {
                 type="submit"
                 className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-white px-4 py-2 text-sm font-medium shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none transition-transform transform hover:scale-105"
                 style={{ background: 'var(--accent)', boxShadow: '0 6px 18px rgba(255,89,89,0.12)' }}
-                aria-label="Get started - contact"
+                aria-label="Book a meeting"
               >
-                Get started
+                Book a meeting
               </button>
+              <noscript className="sr-only">
+                <a href={calLink} target="_blank" rel="noopener noreferrer">Book a meeting</a>
+              </noscript>
             </form>
-
-        
           </div>
-
-          {/* End of centered white card */}
         </div>
       </div>
 
