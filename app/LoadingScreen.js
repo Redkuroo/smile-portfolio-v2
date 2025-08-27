@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { FiSmile } from "react-icons/fi";
+import Image from "next/image";
 
 export default function LoadingScreen() {
   const [percent, setPercent] = useState(0);
@@ -38,9 +38,15 @@ export default function LoadingScreen() {
   return (
     <div
       aria-label="Loading screen"
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#0a1026] to-[#181c2f] overflow-hidden transition-opacity duration-700 ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center min-h-screen overflow-hidden transition-opacity duration-700 ${
         isFadingOut ? "opacity-0" : "opacity-100"
       }`}
+      style={{
+        backgroundImage: `linear-gradient(to bottom right, rgba(10,16,38,0.82), rgba(24,28,47,0.82)), url('/loading_bg.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       {/* Corner Accents */}
       <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[var(--accent)] rounded-tl-lg" />
@@ -51,7 +57,15 @@ export default function LoadingScreen() {
       {/* Glowing Icon */}
       <div className="relative mb-8">
         <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--accent)] flex items-center justify-center shadow-2xl animate-glow">
-          <FiSmile className="h-14 w-14 text-white" aria-hidden />
+          {/* Replace the icon with your SVG in public/logo_smile.svg */}
+          <Image
+            src="/logo_smile.svg"
+            alt="Smile logo"
+            width={112}
+            height={112}
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { FiMail, FiPhone } from 'react-icons/fi'
+import Image from "next/image";
 
 export default function Footer() {
   const quickLinks = [
@@ -84,7 +85,16 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <div className="md:col-span-5">
               <div className="flex items-start gap-4">
-                <div className="text-2xl font-bold" style={{ color: 'var(--foreground)' }}>John Smile</div>
+                <Image
+                  src="/logo_smile.svg"
+                  alt="Smile logo"
+                  width={56}
+                  height={56}
+                  className="object-cover"
+                />
+              
+                    
+             
               </div>
 
               <address className="mt-6 not-italic text-sm text-gray-400 space-y-2">

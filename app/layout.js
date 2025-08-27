@@ -19,6 +19,13 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "John Smile Mella | Developer & Designer",
   description: "I need help",
+   icons: {
+    icon: '/logo_smile.svg',
+    apple: '/logo_smile.svg',
+    other: [
+      { rel: 'icon', url: '/logo_smile.svg', sizes: '32x32' }
+    ]
+  },
 };
 
 export default function RootLayout({ children }) {
