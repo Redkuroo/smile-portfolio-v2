@@ -223,8 +223,9 @@ export default function ProjectSection() {
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: index * 0.06 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.18 }}
+            transition={{ duration: 0.56, delay: index * 0.06 }}
             className="group cursor-pointer"
           >
             {/* Type & Title moved into overlay (show on hover/click) */}
