@@ -59,9 +59,19 @@ function handleBookMeeting(e) {
     }
   }
   useEffect(() => {
+    // Prevent footer flash: start with body class that hides footer
+    if (typeof document !== 'undefined') {
+      document.body.classList.add('no-flash-footer')
+    }
+
     // Show loading screen for the full animation duration (4s + 0.5s fade)
     let timer = setTimeout(() => {
       setLoading(false);
+      // Reveal footer after load
+      if (typeof document !== 'undefined') {
+        document.body.classList.remove('no-flash-footer')
+        document.body.classList.add('app-ready')
+      }
     }, 4500);
     return () => clearTimeout(timer);
   }, []);

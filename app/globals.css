@@ -47,3 +47,17 @@ body.dark {
   background-color: #18191A;
   color: #fff;
 }
+
+/* Prevent footer flash during initial load: hide footer until `.app-ready` is added to <body> */
+.no-flash-footer footer[role="contentinfo"] {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 300ms;
+}
+.app-ready footer[role="contentinfo"] {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
