@@ -3,6 +3,7 @@ import "./globals.css";
 import Sidebar from "./Sidebar";
 import ScrollTopButton from "./components/ScrollTopButton";
 import CustomCursor from "./components/CustomCursor";
+import Footer from "./components/Footer";
 import { ThemeProvider } from "./ThemeProvider";
 
 const geistSans = Geist({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           {/* Sticky bottom-right button (client component) */}
           <ScrollTopButton />
           <CustomCursor />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
