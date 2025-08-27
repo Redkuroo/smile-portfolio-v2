@@ -6,28 +6,37 @@ export default function Footer() {
   const legal = ['Terms of service', 'Privacy policy', 'Cookie policy']
 
   return (
-    <footer className="mt-16">
+  <footer className="mt-16" role="contentinfo">
+    <h2 className="sr-only">Footer</h2>
       {/* Outer rounded card to match the screenshot */}
-      <div className="max-w-6xl mx-auto px-6">
-  <div className="bg-[rgba(255,255,255,0.02)] rounded-3xl overflow-hidden shadow-lg ring-1 ring-gray-100">
+  <div className="max-w-6xl mx-auto px-6">
+  <div
+    className="bg-[rgba(255,255,255,0.02)] rounded-3xl overflow-hidden shadow-lg ring-1 ring-gray-100"
+    role="region"
+    aria-label="Call to action"
+    style={{ boxShadow: '0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)' }}
+  >
           {/* Top CTA */}
           <div className="py-12 px-10 text-center">
             <h3 className="text-4xl font-extrabold" style={{ color: 'var(--foreground)' }}>Let’s Collaborate</h3>
             <p className="mt-2 text-sm" style={{ color: 'rgba(237,237,237,0.8)' }}>Arrange a time to discuss your goals and turn your project into success.</p>
 
-            <form className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto">
+            <form className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="newsletter-email" className="sr-only">Email address</label>
               <input
                 id="newsletter-email"
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full max-w-lg rounded-md border bg-transparent px-4 py-2 text-sm shadow-sm focus:outline-none"
+                aria-label="Your email address"
+                autoComplete="email"
+                className="w-full max-w-lg rounded-md border bg-transparent px-4 py-2 text-sm shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{ color: 'var(--foreground)', borderColor: 'rgba(255,255,255,0.04)' }}
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-white px-4 py-2 text-sm font-medium shadow-sm"
-                style={{ background: 'var(--accent)' }}
+                className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-white px-4 py-2 text-sm font-medium shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none transition-transform transform hover:scale-105"
+                style={{ background: 'var(--accent)', boxShadow: '0 6px 18px rgba(255,89,89,0.12)' }}
+                aria-label="Get started - contact"
               >
                 Get started
               </button>
@@ -42,7 +51,7 @@ export default function Footer() {
 
       {/* Full-width dark footer section (inner content constrained) */}
       <div className="w-full mt-6" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
-        <div className="max-w-6xl mx-auto px-8 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
               <div className="md:col-span-5">
               <div className="flex items-start gap-4">
@@ -54,39 +63,50 @@ export default function Footer() {
                 <div>Philippines</div>
         
               </address>
-<div className="mt-6 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
-                <div>Phone number</div>
-                <div className="font-medium" style={{ color: 'var(--foreground)' }}>09387006898</div>
-              </div>
               <div className="mt-6 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
-                <div>Telephone number</div>
-                <div className="font-medium" style={{ color: 'var(--foreground)' }}>(082) 296 3377</div>
+                <div className="flex items-center gap-3">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3 8l9 6 9-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <div>
+                    <div className="text-xs">Email</div>
+                    <a href="mailto:02jsmella@gmail.com" className="font-medium hover:underline" style={{ color: 'var(--foreground)' }}>02jsmella@gmail.com</a>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-3 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
-                <div>Email</div>
-                <a href="mailto:support@skipmatrix.com" className="text-gray-100 hover:underline">02jsmella@gmail.com</a>
+              <div className="mt-4 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
+                <div className="flex items-center gap-3">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M22 16.92V21a1 1 0 0 1-1.11 1 19 19 0 0 1-8.63-3.07 19 19 0 0 1-6-6A19 19 0 0 1 2 3.11 1 1 0 0 1 3 2h4.09a1 1 0 0 1 1 .75c.12.66.38 1.87.61 2.57a1 1 0 0 1-.24 1l-1.2 1.2a16 16 0 0 0 6 6l1.2-1.2a1 1 0 0 1 1-.24c.7.23 1.9.49 2.57.61a1 1 0 0 1 .75 1V21z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <div>
+                    <div className="text-xs">Mobile</div>
+                    <div className="font-medium" style={{ color: 'var(--foreground)' }}>0938 700 6898</div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
-              <div>
-        <h4 className="text-sm font-semibold">Quick links</h4>
-        <ul className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
+              <nav aria-label="Quick links">
+                <h4 className="text-sm font-semibold">Quick links</h4>
+                <ul role="list" className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
                   {quickLinks.map((l) => (
-          <li key={l}><a href="#" style={{ color: 'inherit' }} className="hover:underline">{l}</a></li>
+                    <li key={l}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none focus-visible:underline">{l}</a></li>
                   ))}
                 </ul>
-              </div>
+              </nav>
 
-              <div>
-        <h4 className="text-sm font-semibold">Social</h4>
-        <ul className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
+              <nav aria-label="Social links">
+                <h4 className="text-sm font-semibold">Social</h4>
+                <ul className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
                   {social.map((s) => (
-          <li key={s}><a href="#" style={{ color: 'inherit' }} className="hover:underline">{s}</a></li>
+                    <li key={s}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none" aria-label={s}>{s}</a></li>
                   ))}
                 </ul>
-              </div>
+              </nav>
 
          
             </div>
