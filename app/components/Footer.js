@@ -48,7 +48,7 @@ export default function Footer() {
         >
           {/* Top CTA */}
           <div className="py-12 px-10 text-center">
-            <h3 className="text-4xl font-extrabold" style={{ color: 'var(--foreground)' }}>Let's Collaborate</h3>
+            <h3 className="text-4xl font-extrabold" style={{ color: 'var(--foreground)' }}>Let&apos;s Collaborate</h3>
             <p className="mt-2 text-sm" style={{ color: 'rgba(237,237,237,0.8)' }}>Arrange a time to discuss your goals and turn your project into success.</p>
 
             <div className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto">
@@ -60,18 +60,22 @@ export default function Footer() {
               >
                 Book a meeting
               </button>
-              <noscript>
-                <a href={calLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-white px-4 py-2 text-sm font-medium shadow-sm">
-                  Book a meeting
-                </a>
-              </noscript>
+          
             </div>
           </div>
         </div>
       </div>
 
       {/* Full-width dark footer section (inner content constrained) */}
-      <div className="w-full mt-6" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
+      <div
+        className="w-full mt-6"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6)), url('/nasa.jpg')",
+          backgroundSize: 'auto 320%',
+          backgroundPosition: 'center',
+          color: 'var(--foreground)'
+        }}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <div className="md:col-span-5">
