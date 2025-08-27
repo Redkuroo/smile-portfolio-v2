@@ -3,8 +3,20 @@ import React from 'react'
 import { FiMail, FiPhone } from 'react-icons/fi'
 
 export default function Footer() {
-  const quickLinks = ['Home', 'About', 'Experience', 'Projects', 'Certificates']
-  const social = ['Facebook', 'LinkedIn', 'Instagram', 'Github', 'Behance']
+  const quickLinks = [
+    { href: '/', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#certificates', label: 'Certificates' },
+  ]
+  const social = [
+    { href: 'https://www.facebook.com/js.mella.9', label: 'Facebook' },
+    { href: 'https://www.linkedin.com/in/john-smile-mella-064a12347/', label: 'LinkedIn' },
+    { href: 'https://www.instagram.com/j_smileeeee/', label: 'Instagram' },
+    { href: 'https://github.com/Redkuroo', label: 'Github' },
+    { href: 'https://www.behance.net/smilemella', label: 'Behance' },
+  ]
   const legal = ['Terms of service', 'Privacy policy', 'Cookie policy']
 
   return (
@@ -93,8 +105,8 @@ export default function Footer() {
                     <h4 className="text-sm font-semibold">Quick links</h4>
                     <ul role="list" className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
                       {quickLinks.map((l) => (
-                        <li key={l}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none focus-visible:underline">{l}</a></li>
-                      ))}
+                          <li key={l.label}><a href={l.href} style={{ color: 'inherit' }} className="hover:underline focus:outline-none focus-visible:underline">{l.label}</a></li>
+                        ))}
                     </ul>
                   </nav>
 
@@ -102,8 +114,8 @@ export default function Footer() {
                     <h4 className="text-sm font-semibold">Social</h4>
                     <ul className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
                       {social.map((s) => (
-                        <li key={s}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none" aria-label={s}>{s}</a></li>
-                      ))}
+                            <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }} className="hover:underline focus:outline-none" aria-label={s.label}>{s.label}</a></li>
+                          ))}
                     </ul>
                   </nav>
                 </div>
