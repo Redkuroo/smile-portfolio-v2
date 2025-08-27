@@ -41,65 +41,69 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Black footer area */}
-          <div className="bg-neutral-900 text-gray-200 px-8 py-12 rounded-b-2xl">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="md:col-span-5">
-                <div className="flex items-start gap-4">
-                  <div className="text-2xl font-bold text-white">skipmatrix</div>
-                </div>
+          {/* End of centered white card */}
+        </div>
+      </div>
 
-                <address className="mt-6 not-italic text-sm text-gray-400 space-y-2">
-                  <div>20619 Torrence Chapel Rd</div>
-                  <div>Suite 110 #400</div>
-                  <div>Cornelius, NC 28031</div>
-                  <div>United States</div>
-                </address>
-
-                <div className="mt-6 text-sm text-gray-400">
-                  <div>Phone number</div>
-                  <div className="font-medium text-gray-100">1-800-201-1019</div>
-                </div>
-
-                <div className="mt-3 text-sm text-gray-400">
-                  <div>Email</div>
-                  <a href="mailto:support@skipmatrix.com" className="text-gray-100 hover:underline">support@skipmatrix.com</a>
-                </div>
+      {/* Full-width dark footer section (inner content constrained) */}
+      <div className="w-full bg-neutral-900 text-gray-200 mt-6">
+        <div className="max-w-6xl mx-auto px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="md:col-span-5">
+              <div className="flex items-start gap-4">
+                <div className="text-2xl font-bold text-white">skipmatrix</div>
               </div>
 
-              <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-200">Quick links</h4>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-400">
-                    {quickLinks.map((l) => (
-                      <li key={l}><a href="#" className="hover:text-white">{l}</a></li>
-                    ))}
-                  </ul>
-                </div>
+              <address className="mt-6 not-italic text-sm text-gray-400 space-y-2">
+                <div>20619 Torrence Chapel Rd</div>
+                <div>Suite 110 #400</div>
+                <div>Cornelius, NC 28031</div>
+                <div>United States</div>
+              </address>
 
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-200">Social</h4>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-400">
-                    {social.map((s) => (
-                      <li key={s}><a href="#" className="hover:text-white">{s}</a></li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="mt-6 text-sm text-gray-400">
+                <div>Phone number</div>
+                <div className="font-medium text-gray-100">1-800-201-1019</div>
+              </div>
 
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-200">Legal</h4>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-400">
-                    {legal.map((t) => (
-                      <li key={t}><a href="#" className="hover:text-white">{t}</a></li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="mt-3 text-sm text-gray-400">
+                <div>Email</div>
+                <a href="mailto:support@skipmatrix.com" className="text-gray-100 hover:underline">support@skipmatrix.com</a>
               </div>
             </div>
 
-            <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
-              © {new Date().getFullYear()} Skipmatrix. All rights reserved.
+            <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-sm font-semibold text-gray-200">Quick links</h4>
+                <ul className="mt-4 space-y-2 text-sm text-gray-400">
+                  {quickLinks.map((l) => (
+                    <li key={l}><a href="#" className="hover:text-white">{l}</a></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-gray-200">Social</h4>
+                <ul className="mt-4 space-y-2 text-sm text-gray-400">
+                  {social.map((s) => (
+                    <li key={s}><a href="#" className="hover:text-white">{s}</a></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-gray-200">Legal</h4>
+                <ul className="mt-4 space-y-2 text-sm text-gray-400">
+                  {legal.map((t) => (
+                    <li key={t}><a href="#" className="hover:text-white">{t}</a></li>
+                  ))}
+                </ul>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+            © {new Date().getFullYear()} Skipmatrix. All rights reserved.
           </div>
         </div>
       </div>
