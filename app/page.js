@@ -87,7 +87,7 @@ function handleBookMeeting(e) {
       <section className="flex flex-col md:flex-row items-center justify-between px-8 md:px-32 py-12 md:py-24 gap-12 md:gap-0">
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col items-start justify-center max-w-2xl">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-left">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 mt-6 leading-tight text-left">
             Hi I&apos;m <span className="text-[var(--accent)]">John Smile!!</span>
           </h1>
           <div className="text-2xl md:text-3xl font-bold mb-2 text-left">
