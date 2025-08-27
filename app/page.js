@@ -28,6 +28,21 @@ function handleBookMeeting(e) {
       window.location.href = calLink
     }
   }
+  function handleViewResume(e) {
+    // keep default href for progressive enhancement, but also open programmatically
+    if (e) e.preventDefault()
+    if (typeof window === 'undefined') return
+  const origin = window.location?.origin || ''
+  const url = `${origin}/John_Smile_Mella_Resume.pdf`
+    try {
+      const w = window.open(url, '_blank', 'noopener,noreferrer')
+      if (w) w.focus()
+      else window.location.href = url
+    } catch (err) {
+      // fallback to direct navigation
+      window.location.href = url
+    }
+  }
   useEffect(() => {
     // Show loading screen for the full animation duration (4s + 0.5s fade)
     let timer = setTimeout(() => {
@@ -84,7 +99,9 @@ function handleBookMeeting(e) {
 
               <div className="mt-8">
               <a
-                  href={"/John_Smile_Resume.pdf"}
+                  href={"/John_Smile_Mella_Resume.pdf"}
+                  onClick={handleViewResume}
+                  download
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
@@ -96,7 +113,7 @@ function handleBookMeeting(e) {
               <div className="mt-8">
               <a
                  onClick={handleBookMeeting}
-                  href={"/John_Smile_Resume.pdf"}
+           
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
