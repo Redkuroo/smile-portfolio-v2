@@ -86,26 +86,28 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
-              <nav aria-label="Quick links">
-                <h4 className="text-sm font-semibold">Quick links</h4>
-                <ul role="list" className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
-                  {quickLinks.map((l) => (
-                    <li key={l}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none focus-visible:underline">{l}</a></li>
-                  ))}
-                </ul>
-              </nav>
+            <div className="md:col-span-7 flex justify-end">
+              <div className="w-full max-w-sm sm:max-w-md">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-right">
+                  <nav aria-label="Quick links">
+                    <h4 className="text-sm font-semibold">Quick links</h4>
+                    <ul role="list" className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
+                      {quickLinks.map((l) => (
+                        <li key={l}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none focus-visible:underline">{l}</a></li>
+                      ))}
+                    </ul>
+                  </nav>
 
-              <nav aria-label="Social links">
-                <h4 className="text-sm font-semibold">Social</h4>
-                <ul className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
-                  {social.map((s) => (
-                    <li key={s}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none" aria-label={s}>{s}</a></li>
-                  ))}
-                </ul>
-              </nav>
-
-         
+                  <nav aria-label="Social links">
+                    <h4 className="text-sm font-semibold">Social</h4>
+                    <ul className="mt-4 space-y-2 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
+                      {social.map((s) => (
+                        <li key={s}><a href="#" style={{ color: 'inherit' }} className="hover:underline focus:outline-none" aria-label={s}>{s}</a></li>
+                      ))}
+                    </ul>
+                  </nav>
+                </div>
+              </div>
             </div>
           </div>
 
