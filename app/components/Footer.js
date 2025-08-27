@@ -23,10 +23,10 @@ export default function Footer() {
   const calLink = process.env.NEXT_PUBLIC_CAL_LINK || 'https://cal.com/your-username'
 
   function openCal(e) {
-    if (e && e.preventDefault) e.preventDefault()
-    if (typeof window === 'undefined') return
-    const w = window.open(calLink, 'cal', 'width=900,height=700,noopener,noreferrer')
-    try { if (w) w.focus() } catch (err) {}
+  if (e && e.preventDefault) e.preventDefault()
+  if (typeof window === 'undefined') return
+  const w = window.open(calLink, '_blank', 'noopener,noreferrer')
+  try { if (w) w.focus() } catch (err) {}
   }
 
   return (
@@ -46,16 +46,6 @@ export default function Footer() {
             <p className="mt-2 text-sm" style={{ color: 'rgba(237,237,237,0.8)' }}>Arrange a time to discuss your goals and turn your project into success.</p>
 
             <form className="mt-6 flex items-center justify-center gap-3 max-w-xl mx-auto" onSubmit={openCal}>
-              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
-              <input
-                id="newsletter-email"
-                type="email"
-                placeholder="Enter your email address"
-                aria-label="Your email address"
-                autoComplete="email"
-                className="w-full max-w-lg rounded-md border bg-transparent px-4 py-2 text-sm shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                style={{ color: 'var(--foreground)', borderColor: 'rgba(255,255,255,0.04)' }}
-              />
               <button
                 type="submit"
                 className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-white px-4 py-2 text-sm font-medium shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none transition-transform transform hover:scale-105"
