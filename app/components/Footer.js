@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import { FiMail, FiPhone } from 'react-icons/fi'
 
 export default function Footer() {
   const quickLinks = ['Home', 'About', 'Experience', 'Projects', 'Certificates']
@@ -66,10 +67,7 @@ export default function Footer() {
               </address>
               <div className="mt-6 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
                 <div className="flex items-center gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                    <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M3 8l9 6 9-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <FiMail className="w-4 h-4" aria-hidden />
                   <div>
                     <div className="text-xs">Email</div>
                     <a href="mailto:02jsmella@gmail.com" className="font-medium hover:underline" style={{ color: 'var(--foreground)' }}>02jsmella@gmail.com</a>
@@ -79,9 +77,7 @@ export default function Footer() {
 
               <div className="mt-4 text-sm" style={{ color: 'rgba(237,237,237,0.75)' }}>
                 <div className="flex items-center gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                    <path d="M22 16.92V21a1 1 0 0 1-1.11 1 19 19 0 0 1-8.63-3.07 19 19 0 0 1-6-6A19 19 0 0 1 2 3.11 1 1 0 0 1 3 2h4.09a1 1 0 0 1 1 .75c.12.66.38 1.87.61 2.57a1 1 0 0 1-.24 1l-1.2 1.2a16 16 0 0 0 6 6l1.2-1.2a1 1 0 0 1 1-.24c.7.23 1.9.49 2.57.61a1 1 0 0 1 .75 1V21z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <FiPhone className="w-4 h-4" aria-hidden />
                   <div>
                     <div className="text-xs">Mobile</div>
                     <div className="font-medium" style={{ color: 'var(--foreground)' }}>0938 700 6898</div>
