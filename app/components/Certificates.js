@@ -290,22 +290,30 @@ export default function Certificates() {
       {/* Thumbnails + pagination */}
       <div className="mt-12">
         <div className="flex flex-wrap gap-4 items-center">
-          {pagedCerts.map((cert) => (
-            <button
+          {pagedCerts.map((cert, idx) => (
+            <motion.div
               key={cert.id}
-              onClick={() => setSelectedId(cert.id)}
-              aria-pressed={selectedId === cert.id}
-              className={`flex items-center gap-3 p-2 rounded-md transition transform ${selectedId === cert.id ? 'ring-2 ring-[var(--accent)] bg-[var(--accent)]/10 scale-105 shadow-lg' : 'hover:scale-105 hover:bg-white/5'}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.16 }}
+              transition={{ duration: 0.5, delay: idx * 0.06 }}
+              className="inline-block"
             >
-              <div className={`w-40 h-24 relative rounded-md overflow-hidden bg-gray-800 ${selectedId === cert.id ? 'ring-1 ring-white/20' : ''}`}>
-                <Image src={cert.image} alt={cert.title} fill className="object-cover" />
-              </div>
-              <div className="text-left">
-                <div className="text-sm text-white/70">{cert.issuer}</div>
-                <div className="font-medium text-white">{cert.title}</div>
-                <div className="text-xs text-white/60">{cert.date}</div>
-              </div>
-            </button>
+              <button
+                onClick={() => setSelectedId(cert.id)}
+                aria-pressed={selectedId === cert.id}
+                className={`flex items-center gap-3 p-2 rounded-md transition transform ${selectedId === cert.id ? 'ring-2 ring-[var(--accent)] bg-[var(--accent)]/10 scale-105 shadow-lg' : 'hover:scale-105 hover:bg-white/5'}`}
+              >
+                <div className={`w-40 h-24 relative rounded-md overflow-hidden bg-gray-800 ${selectedId === cert.id ? 'ring-1 ring-white/20' : ''}`}>
+                  <Image src={cert.image} alt={cert.title} fill className="object-cover" />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm text-white/70">{cert.issuer}</div>
+                  <div className="font-medium text-white">{cert.title}</div>
+                  <div className="text-xs text-white/60">{cert.date}</div>
+                </div>
+              </button>
+            </motion.div>
           ))}
         </div>
 
