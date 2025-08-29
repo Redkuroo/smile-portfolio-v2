@@ -42,7 +42,7 @@ export default function Footer() {
       {/* Outer rounded card to match the screenshot */}
       <div className="max-w-6xl mx-auto px-6">
         <div
-          className="rounded-3xl overflow-hidden shadow-lg ring-1 ring-gray-100"
+          className="rounded-3xl overflow-hidden"
           role="region"
           aria-label="Call to action"
           style={{
