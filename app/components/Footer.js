@@ -46,7 +46,7 @@ export default function Footer() {
           role="region"
           aria-label="Call to action"
           style={{
-            boxShadow: '0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)',
+            boxShadow: '0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0',
             backgroundImage: "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('/connect.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center'
