@@ -37,16 +37,16 @@ export default function Footer() {
   }
 
   return (
-    <footer className="mt-16 bg-transparent" role="contentinfo">
+    <footer className="mt-16" role="contentinfo">
       <h2 className="sr-only">Footer</h2>
-      {/* Outer rounded card - removed white background sources */}
+      {/* Outer rounded card to match the screenshot */}
       <div className="max-w-6xl mx-auto px-6">
         <div
-          className="rounded-3xl overflow-hidden"
+          className="rounded-3xl overflow-hidden shadow-lg ring-1 ring-gray-100"
           role="region"
           aria-label="Call to action"
           style={{
-            boxShadow: '0 10px 30px rgba(2,6,23,0.6)',
+            boxShadow: '0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)',
             backgroundImage: "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('/connect.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center'
