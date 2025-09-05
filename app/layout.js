@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import ScrollTopButton from "./components/ScrollTopButton";
 import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
+import HydrateFooter from "./components/HydrateFooter";
 import { ThemeProvider } from "./ThemeProvider";
 
 const geistSans = Geist({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
           <ScrollTopButton />
           <CustomCursor />
           <Footer />
+          <HydrateFooter />
         </ThemeProvider>
       </body>
     </html>
