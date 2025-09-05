@@ -212,3 +212,16 @@ function handleBookMeeting(e) {
     </div>
   );
 }
+
+
+// Select element by ID and change its content
+const header = document.________('main-title');
+header.________ = 'New Page Title';
+
+// Select all elements with class 'menu-item' and add event listeners
+const menuItems = document.________('.menu-item');
+menuItems.________(function(item) {
+    item.________('click', function(event) {
+        console.log('Menu item clicked:', event.target.textContent);
+    });
+});
