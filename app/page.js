@@ -28,50 +28,10 @@ function handleBookMeeting(e) {
       window.location.href = calLink
     }
   }
-  function handleViewResume(e) {
-    // prevent any default navigation and stop propagation
-    if (e) {
-      e.preventDefault()
-      e.stopPropagation()
-    }
-    if (typeof window === 'undefined') return
-    const origin = window.location?.origin || ''
-    const url = `${origin}/John_Smile_Mella_Resume.pdf`
-    try {
-      // create an anchor and trigger a click — this reliably opens a new tab
-      const a = document.createElement('a')
-      a.href = url
-      a.target = '_blank'
-      a.rel = 'noopener noreferrer'
-      // append to DOM to ensure click works in all browsers
-      document.body.appendChild(a)
-      a.click()
-      a.remove()
-    } catch (err) {
-      // as a last resort, try window.open but don't navigate the current window
-      try {
-        const w = window.open(url, '_blank', 'noopener,noreferrer')
-        if (w) w.focus()
-      } catch (e2) {
-        // nothing else we can do safely without navigating away
-        console.error('Unable to open resume in new tab:', e2)
-      }
-    }
-  }
   useEffect(() => {
-    // Prevent footer flash: start with body class that hides footer
-    if (typeof document !== 'undefined') {
-      document.body.classList.add('no-flash-footer')
-    }
-
     // Show loading screen for the full animation duration (4s + 0.5s fade)
     let timer = setTimeout(() => {
       setLoading(false);
-      // Reveal footer after load
-      if (typeof document !== 'undefined') {
-        document.body.classList.remove('no-flash-footer')
-        document.body.classList.add('app-ready')
-      }
     }, 4500);
     return () => clearTimeout(timer);
   }, []);
@@ -87,7 +47,7 @@ function handleBookMeeting(e) {
       <section className="flex flex-col md:flex-row items-center justify-between px-8 md:px-32 py-12 md:py-24 gap-12 md:gap-0">
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col items-start justify-center max-w-2xl">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 mt-6 leading-tight text-left">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-left">
             Hi I&apos;m <span className="text-[var(--accent)]">John Smile!!</span>
           </h1>
           <div className="text-2xl md:text-3xl font-bold mb-2 text-left">
@@ -123,14 +83,14 @@ function handleBookMeeting(e) {
             ))}
 
               <div className="mt-8">
-              <button
-                  type="button"
-                  onClick={handleViewResume}
-                  aria-label="View Resume (opens in new tab)"
+              <a
+                  href={"/John_Smile_Mella_Resume.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer"
                 >
                  View Resume
-                </button>
+                </a>
             </div>
 
               <div className="mt-8">
@@ -212,16 +172,3 @@ function handleBookMeeting(e) {
     </div>
   );
 }
-
-
-// Select element by ID and change its content
-const header = document.________('main-title');
-header.________ = 'New Page Title';
-
-// Select all elements with class 'menu-item' and add event listeners
-const menuItems = document.________('.menu-item');
-menuItems.________(function(item) {
-    item.________('click', function(event) {
-        console.log('Menu item clicked:', event.target.textContent);
-    });
-});
