@@ -2,7 +2,13 @@
 import { motion } from "framer-motion";
 
 const experiences = [
-
+{
+  date: "August 2025 - Present",
+  title: "Shopify Full-Stack Developer",
+  company: "CARE & TECH",
+  description:
+    "Developed and maintained the e-commerce website on Shopify, improving page load speed by 40% through optimized Liquid and JavaScript code.",
+},
  {
   date: "August 2025 - Present",
   title: "Part-Time College Instructor, BSIT Program",

@@ -147,6 +147,17 @@ const projectsData = [
     codeUrl: "https://github.com/Redkuroo/Sanction-System",
     demoUrl: "https://sanction-system-hcdc.vercel.app/"
   },
+    {
+    id: 14,
+    category: ["frontend"],
+    type: "Shopify Liquid Developer",
+    title: "Care & Tech",
+    description: "An e-commerce website built on Shopify for Care & Tech, featuring a modern design, seamless navigation, and optimized performance to enhance user experience and drive sales.",
+    techs: ["Shopify Liquid", "JavaScript", "HTML", "CSS"],
+    image: "/projects/care.png",
+    codeUrl: "https://caretechshop.com/",
+    demoUrl: "https://caretechshop.com/"
+  },
 ];
 
 const filterOptions = [
