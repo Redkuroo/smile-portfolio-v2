@@ -2,9 +2,16 @@
 import { motion } from "framer-motion";
 
 const experiences = [
+  {
+  date: "December 2025 - Present",
+  title: "Shopify Full-Stack Developer",
+  company: "Poseidon Distribution Opc",
+  description:
+    "Builds and maintains both frontend and backend systems—designing user interfaces, implementing APIs, managing databases, and ensuring the application works end-to-end from user interaction to server logic.",
+},
 {
   date: "August 2025 - Present",
-  title: "Shopify Full-Stack Developer",
+  title: "Shopify Web Developer",
   company: "CARE & TECH",
   description:
     "Developed and maintained the e-commerce website on Shopify, improving page load speed by 40% through optimized Liquid and JavaScript code.",
@@ -18,7 +25,7 @@ const experiences = [
 },
 
   {
-    date: "April 2024 - Present",
+    date: "April 2024 - December 2025",
     title: "Frontend Developer | UI/UX Designer ",
     company: "Freelance",
     description:
@@ -35,7 +42,7 @@ const experiences = [
   },
   {
     date: "July 2022 - July 2025",
-    title: "Student Assistant",
+    title: "Student Assistant (IT Support)",
     company: "Holy Cross of Davao College",
     description:
       "Maintained IT lab systems through regular updates and issue resolution, provided technical support to students and faculty, and assisted with hardware, software, and network setup.",
